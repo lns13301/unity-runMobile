@@ -12,7 +12,7 @@ public class PlayerAction : MonoBehaviour
     public Animator mapAnimator;
 
     // Range
-    private GameObject boxRange;
+    public GameObject boxRange;
     private Vector3 boxRangeBasePosition;
     private Vector3 boxRangeBaseSize;
 
@@ -22,7 +22,8 @@ public class PlayerAction : MonoBehaviour
         instance = this;
         actionType = ActionType.RUN;
 
-        animator = transform.GetChild(0).GetComponent<Animator>();
+        // 애니메이션 등록
+        animator = transform.GetChild(1).GetComponent<Animator>();
 
         mapAnimator = GameObject.Find("SampleGround4X").GetComponent<Animator>();
 
@@ -30,7 +31,7 @@ public class PlayerAction : MonoBehaviour
         boxRange.SetActive(false);
 
         // 공격 범위 기본 세팅
-        boxRangeBasePosition = new Vector3(0.5f, -0.3f, 0);
+        boxRangeBasePosition = new Vector3(-4.5f, -2f, 0);
         boxRangeBaseSize = new Vector3(1f, 1f, 1f);
     }
 
@@ -186,24 +187,23 @@ public class PlayerAction : MonoBehaviour
             case ActionType.ATTACK:
                 if (IsCurrentAnimation(animator, "Attack"))
                 {
-                    if (isAttackButtonPressing && value >= 0.35f && value <= 0.7f)
+                    // 공격 범위 처리
+                    if (boxRange.activeSelf)
+                    {
+                        SetBoxRangeEnd();
+                    }
+                    if (value >= 0.3f && value < 0.4f)
+                    {
+                        SetBoxRangeStart(boxRangeBasePosition, boxRangeBaseSize);
+                    }
+
+                    if (isAttackButtonPressing && value >= 0.4f && value <= 0.7f)
                     {
                         actionType = ActionType.ATTACK1;
                     }
                     else if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
-                    }
-
-                    // 공격 범위 처리
-                    if (boxRange.activeSelf)
-                    {
-                        SetBoxRangeEnd();
-                    }
-
-                    if (isAttackButtonPressing && value == 0.5f)
-                    {
-                        SetBoxRangeStart(boxRangeBasePosition, boxRangeBaseSize);
                     }
                 }
                 break;
@@ -257,15 +257,7 @@ public class PlayerAction : MonoBehaviour
                 break;
         }
 
-        isAttackButtonPressing = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            
-        }
+        // isAttackButtonPressing = false;
     }
 
     public bool IsCurrentAnimation(Animator animator, string animationName)

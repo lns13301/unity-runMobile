@@ -24,9 +24,9 @@ public class FloatingObject : MonoBehaviour
         Floating();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             // TODO 플레이어 점수 ++
             SoundManager.instance.PlayOneShotEffectSound(0);

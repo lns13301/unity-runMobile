@@ -18,5 +18,6 @@ public class ButtonHolding : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerUp(PointerEventData eventData)
     {
         PlayerAction.instance.animator.SetBool("isRunning", true);
+        PlayerAction.instance.isAttackButtonPressing = false;
     }
 }
