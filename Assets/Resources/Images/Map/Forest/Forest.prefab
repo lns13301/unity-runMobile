@@ -265,15 +265,25 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8652962492566841571}
   m_Enabled: 1
-  m_CellSize: {x: 2.1, y: 2.1, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &-8207479779881799117
+--- !u!1001 &4905575033952888848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+--- !u!114 &1327228833537481724
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6232798365485183980, guid: cb2cbac5e6649c84a953e261db6f84f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 4905575033952888848}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

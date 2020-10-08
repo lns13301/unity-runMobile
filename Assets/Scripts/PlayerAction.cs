@@ -16,6 +16,8 @@ public class PlayerAction : MonoBehaviour
     private Vector3 boxRangeBasePosition;
     private Vector3 boxRangeBaseSize;
 
+    public Rigidbody2D rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class PlayerAction : MonoBehaviour
         // 애니메이션 등록
         animator = transform.GetChild(1).GetComponent<Animator>();
 
-        mapAnimator = GameObject.Find("SampleGround4X").GetComponent<Animator>();
+        // mapAnimator = GameObject.Find("SampleGround4X").GetComponent<Animator>();
 
         boxRange = transform.GetChild(0).GetChild(0).gameObject;
         boxRange.SetActive(false);
@@ -33,6 +35,9 @@ public class PlayerAction : MonoBehaviour
         // 공격 범위 기본 세팅
         boxRangeBasePosition = new Vector3(-4.5f, -2f, 0);
         boxRangeBaseSize = new Vector3(1f, 1f, 1f);
+
+        // 강체
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -129,6 +134,7 @@ public class PlayerAction : MonoBehaviour
 
     public void SetAnimationState(ActionType actionType)
     {
+        return;
         switch (actionType)
         {
             case ActionType.RUN:
@@ -178,7 +184,17 @@ public class PlayerAction : MonoBehaviour
         boxRange.GetComponent<BoxCollider>().size = boxRangeBaseSize;
     }
 
-    public void UpdateAttackState()
+    public void ButtonJump()
+    {
+        rigidbody.AddForce(new Vector3(0, 300, 0));
+    }
+
+    private void UpdateJumpState()
+    {
+
+    }
+
+    private void UpdateAttackState()
     {
         float value = GetAnimationNormalizedTime(animator);
 
