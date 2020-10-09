@@ -16,12 +16,16 @@ public class AttackRange : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (!PlayerAction.instance.doAttack)
         {
-            Debug.Log("충돌");
-            other.gameObject.GetComponent<Enemy>().TakeDamage();
+            return;
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(PlayerAction.instance.actionType);
         }
     }
 }

@@ -15,6 +15,7 @@ public class PlayerAction : MonoBehaviour
     public GameObject boxRange;
     private Vector3 boxRangeBasePosition;
     private Vector3 boxRangeBaseSize;
+    public bool doAttack;
 
     public Rigidbody2D rigidbody;
 
@@ -27,14 +28,13 @@ public class PlayerAction : MonoBehaviour
         // 애니메이션 등록
         animator = transform.GetChild(1).GetComponent<Animator>();
 
-        // mapAnimator = GameObject.Find("SampleGround4X").GetComponent<Animator>();
+        mapAnimator = GameObject.Find("ForestMap").GetComponent<Animator>();
 
         boxRange = transform.GetChild(0).GetChild(0).gameObject;
-        boxRange.SetActive(false);
 
         // 공격 범위 기본 세팅
-        boxRangeBasePosition = new Vector3(-4.5f, -2f, 0);
-        boxRangeBaseSize = new Vector3(1f, 1f, 1f);
+        boxRangeBasePosition = boxRange.transform.position;
+        boxRangeBaseSize = boxRange.transform.localScale;
 
         // 강체
         rigidbody = GetComponent<Rigidbody2D>();
@@ -46,6 +46,7 @@ public class PlayerAction : MonoBehaviour
         SetBaseState();
         UpdateAttackState();
         SetAnimationState(actionType);
+        UpdateRangePosition();
     }
 
     private void OnPlayerWalk(Animator animator, string animationName)
@@ -134,17 +135,16 @@ public class PlayerAction : MonoBehaviour
 
     public void SetAnimationState(ActionType actionType)
     {
-        return;
         switch (actionType)
         {
             case ActionType.RUN:
                 animator.SetBool("isRunning", true);
                 ReSetTriggers();
-                mapAnimator.SetFloat("GroundSpeed", 2.0f);
+                mapAnimator.SetFloat("GroundSpeed", 1.0f);
                 break;
             case ActionType.ATTACK:
                 animator.SetTrigger("doAttack");
-                mapAnimator.SetFloat("GroundSpeed", 0.5f);
+                mapAnimator.SetFloat("GroundSpeed", 0.3f);
                 break;
             case ActionType.ATTACK1:
                 animator.SetTrigger("doAttack1");
@@ -170,23 +170,30 @@ public class PlayerAction : MonoBehaviour
         animator.ResetTrigger("doAttack4");
     }
 
+    public void UpdateRangePosition()
+    {
+        boxRange.transform.position = new Vector2(boxRangeBasePosition.x, transform.position.y - 0.1f);
+    }
+
+    // 제거 해야할 것
     private void SetBoxRangeStart(Vector3 position, Vector3 colliderSize)
     {
         boxRange.SetActive(true);
         boxRange.transform.position = position;
-        boxRange.GetComponent<BoxCollider>().size = colliderSize;
+        boxRange.GetComponent<BoxCollider2D>().size = colliderSize;
     }
 
+    // 제거 해야할 것
     private void SetBoxRangeEnd()
     {
         boxRange.SetActive(false);
         boxRange.transform.position = boxRangeBasePosition;
-        boxRange.GetComponent<BoxCollider>().size = boxRangeBaseSize;
+        boxRange.GetComponent<BoxCollider2D>().size = boxRangeBaseSize;
     }
 
     public void ButtonJump()
     {
-        rigidbody.AddForce(new Vector3(0, 300, 0));
+        rigidbody.AddForce(new Vector3(0, 400, 0));
     }
 
     private void UpdateJumpState()
@@ -198,20 +205,18 @@ public class PlayerAction : MonoBehaviour
     {
         float value = GetAnimationNormalizedTime(animator);
 
+/*        if (boxRange.activeSelf)
+        {
+            SetBoxRangeEnd();
+        }*/
+
         switch (actionType)
         {
             case ActionType.ATTACK:
                 if (IsCurrentAnimation(animator, "Attack"))
                 {
                     // 공격 범위 처리
-                    if (boxRange.activeSelf)
-                    {
-                        SetBoxRangeEnd();
-                    }
-                    if (value >= 0.3f && value < 0.4f)
-                    {
-                        SetBoxRangeStart(boxRangeBasePosition, boxRangeBaseSize);
-                    }
+                    UpdateAttackAction(value);
 
                     if (isAttackButtonPressing && value >= 0.4f && value <= 0.7f)
                     {
@@ -220,12 +225,16 @@ public class PlayerAction : MonoBehaviour
                     else if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
+                        doAttack = false;
                     }
                 }
                 break;
             case ActionType.ATTACK1:
                 if (IsCurrentAnimation(animator, "Attack 1"))
                 {
+                    // 공격 범위 처리
+                    UpdateAttackAction(value);
+
                     if (isAttackButtonPressing && value >= 0.35f && value <= 0.7f)
                     {
                         actionType = ActionType.ATTACK2;
@@ -233,12 +242,16 @@ public class PlayerAction : MonoBehaviour
                     else if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
+                        doAttack = false;
                     }
                 }
                 break;
             case ActionType.ATTACK2:
                 if (IsCurrentAnimation(animator, "Attack 2"))
                 {
+                    // 공격 범위 처리
+                    UpdateAttackAction(value);
+
                     if (isAttackButtonPressing && value >= 0.35f && value <= 0.75f)
                     {
                         actionType = ActionType.ATTACK3;
@@ -246,34 +259,58 @@ public class PlayerAction : MonoBehaviour
                     else if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
+                        doAttack = false;
                     }
                 }
                 break;
             case ActionType.ATTACK3:
                 if (IsCurrentAnimation(animator, "Attack 3"))
                 {
-                    if (isAttackButtonPressing && value >= 0.55f && value <= 0.9f)
+                    // 공격 범위 처리
+                    UpdateAttackAction(value);
+
+                    if (isAttackButtonPressing && value >= 0.55f && value <= 0.8f)
                     {
                         actionType = ActionType.ATTACK4;
                     }
                     else if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
+                        doAttack = false;
                     }
                 }
                 break;
             case ActionType.ATTACK4:
                 if (IsCurrentAnimation(animator, "Attack 4"))
                 {
+                    // 공격 범위 처리
+                    UpdateAttackAction(value, 0.8f, 0.95f);
+
                     if (value > 0.95f)
                     {
                         actionType = ActionType.RUN;
+                        doAttack = false;
                     }
                 }
                 break;
         }
 
         // isAttackButtonPressing = false;
+    }
+
+    private void UpdateAttackAction(float value, float startValue = 0.3f, float EndValue = 0.4f)
+    {
+        // 공격 범위 처리
+        if (value >= startValue && value < EndValue)
+        {
+            // SetBoxRangeStart(GetBoxAttackRagnePosition(), boxRangeBaseSize);
+            doAttack = true;
+        }
+    }
+
+    private Vector2 GetBoxAttackRagnePosition()
+    {
+        return transform.position;
     }
 
     public bool IsCurrentAnimation(Animator animator, string animationName)

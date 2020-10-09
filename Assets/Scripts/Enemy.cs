@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody2D rigidbody;
 
     public Animator arrowUI;
     public Animator animator;
@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -85,10 +85,32 @@ public class Enemy : MonoBehaviour
         
     }
 
-    public void TakeDamage()
+    public void TakeDamage(ActionType actionType)
     {
-        rigidbody.AddForce(new Vector3(300, 150, 0));
-        rigidbody.useGravity = true;
+        SoundManager.instance.PlayOneShotEffectSound(1);
+
+        if (actionType != ActionType.ATTACK4)
+        {
+            rigidbody.AddForce(new Vector3(80, 100));
+        }
+        else
+        {
+            rigidbody.AddForce(new Vector3(400, 250));
+        }
+
+        ChangeTagWhenHit();
+    }
+
+    private void ChangeTagWhenHit()
+    {
+        gameObject.tag = "DamagedEnemy";
+        Invoke("ChangeTagOriginalState", 0.35f);
+    }
+
+    private void ChangeTagOriginalState()
+    {
+        gameObject.tag = "Enemy";
+        CancelInvoke("ChangeTagOriginalState");
     }
 
     /*public float getElementResult(Skill skill, BattleEntity entityData)
