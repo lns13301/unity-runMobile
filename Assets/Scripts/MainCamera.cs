@@ -41,6 +41,28 @@ public class MainCamera : MonoBehaviour
 
         MoveBackground();
         MoveCloud();
+        FixCameraShake();
+    }
+
+    private void FixCameraShake()
+    {
+        if (isDamaged)
+        {
+            if (cameraTimer < 0.1f)
+            {
+                transform.position = new Vector3(
+                    Random.Range(cameraPosition.x - 0.1f, cameraPosition.x + 0.1f),
+                    Random.Range(cameraPosition.y - 0.1f, cameraPosition.y + 0.1f),
+                    -10);
+                cameraTimer += Time.deltaTime;
+
+                return;
+            }
+            else
+            {
+                isDamaged = false;
+            }
+        }
     }
 
     public void SetCameraShake()

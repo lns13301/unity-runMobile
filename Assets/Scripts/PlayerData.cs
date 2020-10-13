@@ -11,7 +11,6 @@ public class PlayerData
     public int questActionIndex;
     public string name;
     public Job job;
-    public Element element;
     public int level;
     public int exp;
     public int nextExp;
@@ -45,14 +44,11 @@ public class PlayerData
 
     public int fame;
     public int charm;
-    public float weight;
-    public float weightMax;
 
-    public float expStack;
     public int sortingIndex;
 
     public List<Skill> skills;
-    public List<HeroData> heroDatas;
+    public List<EntityData> entityData;
 
     //Equipments
     /*    public int reinforce;
@@ -73,54 +69,6 @@ public class PlayerData
         public float concentrationEquipment;
 
         public float expEffEquipment;*/
-
-    public string getJobName()
-    {
-        switch (job)
-        {
-            case Job.APPRENTICE:
-                return "견습 마법사";
-            case Job.BEGINNER:
-                return "초보 마법사";
-            case Job.EXPERT:
-                return "숙련 마법사";
-            case Job.MAGE:
-                return "마도사";
-            case Job.GREATMAGE:
-                return "대마도사";
-            case Job.SAGE:
-                return "현자";
-            case Job.GREATSAGE:
-                return "대현자";
-            case Job.SUPERMAGE:
-                return "초대마도사 (" + getElementName() + ")";
-            default :
-                return "무직";
-        }
-    }
-
-    public string getElementName()
-    {
-        switch (element)
-        {
-            case Element.FIRE:
-                return "화염";
-            case Element.ICE:
-                return "얼음";
-            case Element.EARTH:
-                return "대지";
-            case Element.THUNDER:
-                return "번개";
-            case Element.WIND:
-                return "바람";
-            case Element.LIGHTNESS:
-                return "빛";
-            case Element.DARKNESS:
-                return "어둠";
-            default:
-                return "무속";
-        }
-    }
 
     /*public void setPlayerDataByBattleEntity(BattleEntity battleEntity)
     {

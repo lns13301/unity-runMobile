@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Sprite prevPortrait;
     private Text talker;
     private TypeEffect talkEffect;
-    public Text NPCName;
+    public Text npcName;
 
     public int talkIndex;
     public bool isAction;
@@ -76,12 +76,12 @@ public class GameManager : MonoBehaviour
         isBattle = false;
 
         instance = this;
-        loadPlayerDataFromJsonMobile();
+        //loadPlayerDataFromJsonMobile();
         //savePlayerDataToJson();
         //loadPlayerDataFromJson();
         //loadSkillDataFromJson();
 
-        loadExpTable();
+        //loadExpTable();
 
         resolution = new Vector3(Screen.width, Screen.height, 0);
 
@@ -577,7 +577,7 @@ public class GameManager : MonoBehaviour
 
     public void setNPCName(string name)
     {
-        NPCName.text = name;
+        npcName.text = name;
     }
 
     public void setTalker(string talkData, int id)
@@ -689,7 +689,6 @@ public class GameManager : MonoBehaviour
 
             playerData.name = "내이름은여덟글자";
             playerData.job = Job.APPRENTICE;
-            playerData.element = Element.ICE;
             playerData.level = 1;
             playerData.power = 0;
             playerData.armor = 0;
@@ -704,8 +703,6 @@ public class GameManager : MonoBehaviour
             playerData.expEff = 0;
             playerData.fame = 0;
             playerData.charm = 0;
-            playerData.weight = 0;
-            playerData.weightMax = 10;
 
             playerData.items = new List<Item>();
             //playerData.equipments = new Item[11];
@@ -738,8 +735,6 @@ public class GameManager : MonoBehaviour
         playerData.critRate = 6;
         playerData.currentQuest = null;
         playerData.startQuest = null;
-        playerData.weight = 8;
-        playerData.weightMax = 9;
         playerData.exp = 12;
         playerData.expEff = 13;
         playerData.fame = 14;

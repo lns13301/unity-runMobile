@@ -77,7 +77,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895690285
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 5
 --- !u!33 &1704866144078962956
 MeshFilter:
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 1704866144078962957}
   m_subTextObjects:
   - {fileID: 0}

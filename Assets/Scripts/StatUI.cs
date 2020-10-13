@@ -148,9 +148,7 @@ public class StatUI : MonoBehaviour
             isDataChanged = false;
 
             nameText.text = "닉네임 : " + GameManager.instance.playerData.name;
-            typeText.text = "종 족 : " + GameManager.instance.playerData.getElementName() + "종족";
             levelText.text = "레 벨 : " + GameManager.instance.playerData.level;
-            jobText.text = "직 업 : " + GameManager.instance.playerData.getJobName();
             moneyText.text = "보유 핀 : " + GameManager.instance.playerData.money;
             beneficenceScoreText.text = "선행 점수 : " + GameManager.instance.playerData.fame;
 

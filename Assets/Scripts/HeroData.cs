@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HeroData : MonoBehaviour
 {
+    public EntityData entityData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class HeroData : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetEntityData(EntityData entityData)
+    {
+        this.entityData = entityData;
     }
 }
