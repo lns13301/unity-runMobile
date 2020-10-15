@@ -13,6 +13,7 @@ public class PlayerAction : MonoBehaviour
 
     // Range
     public GameObject boxRange;
+    public GameObject groundRange;
     private Vector3 boxRangeBasePosition;
     private Vector3 boxRangeBaseSize;
     public bool doAttack;
@@ -31,6 +32,8 @@ public class PlayerAction : MonoBehaviour
         mapAnimator = GameObject.Find("ForestMap").GetComponent<Animator>();
 
         boxRange = transform.GetChild(0).GetChild(0).gameObject;
+        groundRange = transform.GetChild(0).GetChild(1).gameObject;
+        groundRange.SetActive(false);
 
         // 공격 범위 기본 세팅
         boxRangeBasePosition = boxRange.transform.position;
@@ -140,7 +143,7 @@ public class PlayerAction : MonoBehaviour
             case ActionType.RUN:
                 animator.SetBool("isRunning", true);
                 ReSetTriggers();
-                mapAnimator.SetFloat("GroundSpeed", 1.0f);
+                mapAnimator.SetFloat("GroundSpeed", 0.8f);
                 break;
             case ActionType.ATTACK:
                 animator.SetTrigger("doAttack");
@@ -193,7 +196,26 @@ public class PlayerAction : MonoBehaviour
 
     public void ButtonJump()
     {
+        rigidbody.velocity = Vector3.zero;
         rigidbody.AddForce(new Vector3(0, 400, 0));
+        animator.SetBool("isJumping", true);
+        animator.SetBool("isRunning", false);
+
+        Invoke("SetActiveGroundRange", 0.15f);
+    }
+
+    public void SetLanding()
+    {
+        animator.SetBool("isJumping", false);
+        animator.SetBool("isRunning", true);
+
+        CancelInvoke("SetActiveGroundRange");
+        groundRange.SetActive(false);
+    }
+
+    private void SetActiveGroundRange()
+    {
+        groundRange.SetActive(true);
     }
 
     private void UpdateJumpState()
