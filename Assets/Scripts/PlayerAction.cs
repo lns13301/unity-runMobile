@@ -19,6 +19,7 @@ public class PlayerAction : MonoBehaviour
     public bool doAttack;
 
     public Rigidbody2D rigidbody;
+    public int jumpCount;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class PlayerAction : MonoBehaviour
 
         // 강체
         rigidbody = GetComponent<Rigidbody2D>();
+        jumpCount = 0;
     }
 
     // Update is called once per frame
@@ -143,7 +145,7 @@ public class PlayerAction : MonoBehaviour
             case ActionType.RUN:
                 animator.SetBool("isRunning", true);
                 ReSetTriggers();
-                mapAnimator.SetFloat("GroundSpeed", 0.8f);
+                mapAnimator.SetFloat("GroundSpeed", 1f);
                 break;
             case ActionType.ATTACK:
                 animator.SetTrigger("doAttack");
@@ -196,10 +198,18 @@ public class PlayerAction : MonoBehaviour
 
     public void ButtonJump()
     {
+        if (jumpCount > 1)
+        {
+            return;
+        }
+
         rigidbody.velocity = Vector3.zero;
-        rigidbody.AddForce(new Vector3(0, 400, 0));
+        rigidbody.AddForce(new Vector3(0, 500, 0));
         animator.SetBool("isJumping", true);
         animator.SetBool("isRunning", false);
+        jumpCount++;
+
+        mapAnimator.SetFloat("GroundSpeed", 0.6f);
 
         Invoke("SetActiveGroundRange", 0.15f);
     }
@@ -208,6 +218,8 @@ public class PlayerAction : MonoBehaviour
     {
         animator.SetBool("isJumping", false);
         animator.SetBool("isRunning", true);
+        jumpCount = 0;
+        mapAnimator.SetFloat("GroundSpeed", 1f);
 
         CancelInvoke("SetActiveGroundRange");
         groundRange.SetActive(false);

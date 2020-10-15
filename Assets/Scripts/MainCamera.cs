@@ -37,7 +37,7 @@ public class MainCamera : MonoBehaviour
         cameraPosition.z = playerTransform.position.z + offsetZ;
 
         transform.position = 
-            Vector3.Lerp(transform.position, cameraPosition, followSpeed * Time.deltaTime * 3);
+            Vector3.Lerp(transform.position, cameraPosition, followSpeed * Time.deltaTime * 6);
 
         MoveBackground();
         MoveCloud();
@@ -91,7 +91,7 @@ public class MainCamera : MonoBehaviour
         Vector3 backgroundAimPosition = new Vector3(cameraPosition.x, cameraPosition.y, background.transform.position.z);
 
         background.transform.position =
-            Vector3.Lerp(background.transform.position, backgroundAimPosition, followSpeed * Time.deltaTime * 1.5f);
+            Vector3.Lerp(background.transform.position, backgroundAimPosition, followSpeed * Time.deltaTime * 2.5f);
     }
 
     private void MoveCloud()
@@ -103,7 +103,7 @@ public class MainCamera : MonoBehaviour
             Vector3 CloudAimPosition = new Vector3(clouds[i].transform.position.x, cameraPosition.y + 3, clouds[i].transform.transform.position.z);
 
             clouds[i].transform.position =
-                Vector3.Lerp(clouds[i].transform.position, CloudAimPosition, followSpeed * Time.deltaTime * 1.7f);
+                Vector3.Lerp(clouds[i].transform.position, CloudAimPosition, followSpeed * Time.deltaTime * 3.5f);
         }
     }
 }

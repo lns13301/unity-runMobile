@@ -18,7 +18,6 @@ public class GroundRange : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("감지");
         if (collision.gameObject.tag == "Ground")
         {
             PlayerAction.instance.SetLanding();
