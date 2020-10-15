@@ -15,17 +15,17 @@ public class ButtonHolding : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         if(buttonType == 4)
         {
             PlayerAction.instance.ButtonJump();
-            SoundManager.instance.PlayOneShotEffectSound(2);
         }
 
         if (buttonType == 8)
         {
             PlayerAction.instance.isAttackButtonPressing = true;
 
-            if (PlayerAction.instance.actionType == ActionType.CHOPPING)
+            // 촙핑 캔슬
+/*            if (PlayerAction.instance.actionType == ActionType.CHOPPING)
             {
                 PlayerAction.instance.SetLanding();
-            }
+            }*/
         }
         // TODO 누르고 있을 때, 버튼 효과 추가
     }

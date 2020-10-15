@@ -204,6 +204,7 @@ public class PlayerAction : MonoBehaviour
             return;
         }
 
+        SoundManager.instance.PlayOneShotEffectSound(2);
         rigidbody.velocity = Vector3.zero;
         rigidbody.AddForce(new Vector3(0, 500, 0));
         animator.SetBool("isJumping", true);

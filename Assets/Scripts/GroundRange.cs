@@ -38,7 +38,7 @@ public class GroundRange : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         // 공중일 때 띄운상태로
-        if (collision.gameObject.layer == 12)
+        if (collision.gameObject.tag == "Ground" && tileGameObject.tag != "Trap")
         {
             PlayerAction.instance.isJumping = true;
         }
