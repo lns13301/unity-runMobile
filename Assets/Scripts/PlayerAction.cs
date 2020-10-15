@@ -20,6 +20,7 @@ public class PlayerAction : MonoBehaviour
 
     public Rigidbody2D rigidbody;
     public int jumpCount;
+    public bool isJumping;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,6 @@ public class PlayerAction : MonoBehaviour
 
         boxRange = transform.GetChild(0).GetChild(0).gameObject;
         groundRange = transform.GetChild(0).GetChild(1).gameObject;
-        groundRange.SetActive(false);
 
         // 공격 범위 기본 세팅
         boxRangeBasePosition = boxRange.transform.position;
@@ -43,6 +43,7 @@ public class PlayerAction : MonoBehaviour
         // 강체
         rigidbody = GetComponent<Rigidbody2D>();
         jumpCount = 0;
+        isJumping = false;
     }
 
     // Update is called once per frame
@@ -208,6 +209,7 @@ public class PlayerAction : MonoBehaviour
         animator.SetBool("isJumping", true);
         animator.SetBool("isRunning", false);
         jumpCount++;
+        actionType = ActionType.JUMP;
 
         mapAnimator.SetFloat("GroundSpeed", 0.6f);
 
@@ -221,13 +223,45 @@ public class PlayerAction : MonoBehaviour
         jumpCount = 0;
         mapAnimator.SetFloat("GroundSpeed", 1f);
 
+        Invoke("LandingDelay", 0.5f);
+
+        animator.SetBool("isChopping", false);
+        isJumping = false;
+
         CancelInvoke("SetActiveGroundRange");
-        groundRange.SetActive(false);
+    }
+
+    public void LandingDelay()
+    {
+        actionType = ActionType.RUN;
+        CancelInvoke("LandingDelay");
     }
 
     private void SetActiveGroundRange()
     {
-        groundRange.SetActive(true);
+        isJumping = true;
+    }
+
+    public void DoChopping()
+    {
+        if (!isJumping || actionType == ActionType.CHOPPING)
+        {
+            return;
+        }
+
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.AddForce(new Vector3(0, 300, 0));
+        mapAnimator.SetFloat("GroundSpeed", 0f);
+        animator.SetBool("isChopping", true);
+        actionType = ActionType.CHOPPING;
+
+        Invoke("AddChoppingGravity", 0.5f);
+    }
+
+    public void AddChoppingGravity()
+    {
+        rigidbody.AddForce(new Vector3(0, -500, 0));
+        CancelInvoke("AddChoppingGravity");
     }
 
     private void UpdateJumpState()
@@ -239,10 +273,15 @@ public class PlayerAction : MonoBehaviour
     {
         float value = GetAnimationNormalizedTime();
 
-/*        if (boxRange.activeSelf)
+        /*        if (boxRange.activeSelf)
+                {
+                    SetBoxRangeEnd();
+                }*/
+
+        if (isAttackButtonPressing)
         {
-            SetBoxRangeEnd();
-        }*/
+            DoChopping();
+        }
 
         switch (actionType)
         {
@@ -377,5 +416,7 @@ public enum ActionType
     SKILL,
     SKILL1,
     SKILL2,
-    ULTIMATE
+    ULTIMATE,
+    CHOPPING,
+    FLY
 }

@@ -45,16 +45,20 @@ public class Enemy : MonoBehaviour
     {
         SoundManager.instance.PlayOneShotEffectSound(1);
 
-        if (actionType != ActionType.ATTACK4)
+        ChangeTagWhenHit();
+
+        if (actionType == ActionType.CHOPPING)
         {
-            rigidbody.AddForce(new Vector3(80, 100));
+            rigidbody.AddForce(new Vector3(800, 500));
+        }
+        else if (actionType != ActionType.ATTACK4)
+        {
+            rigidbody.AddForce(new Vector3(100, 100));
         }
         else if (PlayerAction.instance.IsCurrentAnimation(PlayerAction.instance.animator, "Attack 4"))
         {
             rigidbody.AddForce(new Vector3(400, 250));
         }
-
-        ChangeTagWhenHit();
 
         GameObject hudText = Instantiate(hudDamageText);
         hudText.transform.position = hudPos.position;
