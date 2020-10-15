@@ -203,7 +203,7 @@ public class PlayerAction : MonoBehaviour
 
     private void UpdateAttackState()
     {
-        float value = GetAnimationNormalizedTime(animator);
+        float value = GetAnimationNormalizedTime();
 
 /*        if (boxRange.activeSelf)
         {
@@ -318,7 +318,7 @@ public class PlayerAction : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).IsName(animationName);
     }
 
-    public float GetAnimationNormalizedTime(Animator animator)
+    public float GetAnimationNormalizedTime()
     {
         return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }

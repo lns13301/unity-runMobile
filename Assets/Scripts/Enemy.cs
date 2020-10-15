@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         {
             rigidbody.AddForce(new Vector3(80, 100));
         }
-        else
+        else if (PlayerAction.instance.IsCurrentAnimation(PlayerAction.instance.animator, "Attack 4"))
         {
             rigidbody.AddForce(new Vector3(400, 250));
         }
@@ -155,8 +155,9 @@ public class Enemy : MonoBehaviour
 
     private void ChangeTagWhenHit()
     {
+        // 해당 부분을 나중에 공격마다 쿨타임 지정해서 변수로 줘야할 듯
         gameObject.tag = "DamagedEnemy";
-        Invoke("ChangeTagOriginalState", 0.35f);
+        Invoke("ChangeTagOriginalState", 0.38f);
     }
 
     private void ChangeTagOriginalState()
