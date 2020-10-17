@@ -16,8 +16,7 @@ public class ButtonHolding : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             PlayerAction.instance.ButtonJump();
         }
-
-        if (buttonType == 8)
+        else if (buttonType == 8)
         {
             PlayerAction.instance.isAttackButtonPressing = true;
 
@@ -28,6 +27,10 @@ public class ButtonHolding : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             }*/
         }
         // TODO 누르고 있을 때, 버튼 효과 추가
+        else
+        {
+            PlayerAction.instance.SetActionType(buttonType);
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

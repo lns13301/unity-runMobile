@@ -10,6 +10,7 @@ public class PlayerAction : MonoBehaviour
     public bool isAttackButtonPressing;
 
     public Animator mapAnimator;
+    public float defaultMapSpeed;
 
     // Range
     public GameObject boxRange;
@@ -22,6 +23,12 @@ public class PlayerAction : MonoBehaviour
     public int jumpCount;
     public bool isJumping;
 
+    // Skill
+    public float skillCooldown;
+    public float skillFinish;
+    public float skillFinishGravityTime;
+    public bool doSkill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +39,7 @@ public class PlayerAction : MonoBehaviour
         animator = transform.GetChild(1).GetComponent<Animator>();
 
         mapAnimator = GameObject.Find("ForestMap").GetComponent<Animator>();
+        defaultMapSpeed = 1f;
 
         boxRange = transform.GetChild(0).GetChild(0).gameObject;
         groundRange = transform.GetChild(0).GetChild(1).gameObject;
@@ -53,6 +61,11 @@ public class PlayerAction : MonoBehaviour
         UpdateAttackState();
         SetAnimationState(actionType);
         UpdateRangePosition();
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateCooldown();
     }
 
     private void OnPlayerWalk(Animator animator, string animationName)
@@ -112,7 +125,7 @@ public class PlayerAction : MonoBehaviour
                 actionType = ActionType.ATTACK5;
                 break;
             case 14:
-                actionType = ActionType.SKILL;
+                ButtonSkill(); // ActionType.SKILL and ActionType.SKILLFINISH
                 break;
             case 15:
                 actionType = ActionType.SKILL1;
@@ -146,7 +159,7 @@ public class PlayerAction : MonoBehaviour
             case ActionType.RUN:
                 animator.SetBool("isRunning", true);
                 ReSetTriggers();
-                mapAnimator.SetFloat("GroundSpeed", 1f);
+                mapAnimator.SetFloat("GroundSpeed", defaultMapSpeed);
                 break;
             case ActionType.ATTACK:
                 animator.SetTrigger("doAttack");
@@ -164,6 +177,12 @@ public class PlayerAction : MonoBehaviour
             case ActionType.ATTACK4:
                 animator.SetTrigger("doAttack4");
                 break;
+            case ActionType.SKILL:
+                animator.SetTrigger("doSkill");
+                break;
+            case ActionType.SKILLFINISH:
+                animator.SetTrigger("doSkill0-2");
+                break;
         }
     }
 
@@ -174,6 +193,8 @@ public class PlayerAction : MonoBehaviour
         animator.ResetTrigger("doAttack2");
         animator.ResetTrigger("doAttack3");
         animator.ResetTrigger("doAttack4");
+        animator.ResetTrigger("doSkill");
+        animator.ResetTrigger("doSkill0-2");
     }
 
     public void UpdateRangePosition()
@@ -203,28 +224,49 @@ public class PlayerAction : MonoBehaviour
         {
             return;
         }
+        actionType = ActionType.JUMP;
 
         SoundManager.instance.PlayOneShotEffectSound(2);
         rigidbody.velocity = Vector3.zero;
         rigidbody.AddForce(new Vector3(0, 500, 0));
-        animator.SetBool("isJumping", true);
-        animator.SetBool("isRunning", false);
+        ChangeAnimation("isJumping");
         jumpCount++;
-        actionType = ActionType.JUMP;
 
         mapAnimator.SetFloat("GroundSpeed", 0.6f);
 
         Invoke("SetActiveGroundRange", 0.15f);
     }
 
+    public void ButtonSkill()
+    {
+        if (skillCooldown > 0)
+        {
+            if (skillFinish > 0)
+            {
+                actionType = ActionType.SKILLFINISH;
+                skillFinish = 0;
+            }
+
+            return;
+        }
+        actionType = ActionType.SKILL;
+
+        skillCooldown = 4.0f;
+    }
+
+    private void ChangeAnimation(string name, bool isTrue = true)
+    {
+        animator.SetBool(name, isTrue);
+        animator.SetBool("isRunning", !isTrue);
+    }
+
     public void SetLanding()
     {
-        animator.SetBool("isJumping", false);
-        animator.SetBool("isRunning", true);
+        ChangeAnimation("isJumping", false);
         jumpCount = 0;
-        mapAnimator.SetFloat("GroundSpeed", 1f);
+        mapAnimator.SetFloat("GroundSpeed", defaultMapSpeed);
 
-        Invoke("LandingDelay", 0.5f);
+        // Invoke("LandingDelay", 0.5f);
 
         animator.SetBool("isChopping", false);
         isJumping = false;
@@ -252,9 +294,10 @@ public class PlayerAction : MonoBehaviour
 
         rigidbody.velocity = Vector3.zero;
         rigidbody.AddForce(new Vector3(0, 300, 0));
-        mapAnimator.SetFloat("GroundSpeed", 0f);
+        mapAnimator.SetFloat("GroundSpeed", 0.1f);
         animator.SetBool("isChopping", true);
         actionType = ActionType.CHOPPING;
+        jumpCount += 2;
 
         Invoke("AddChoppingGravity", 0.5f);
     }
@@ -268,6 +311,19 @@ public class PlayerAction : MonoBehaviour
     private void UpdateJumpState()
     {
 
+    }
+
+    private void UpdateCooldown()
+    {
+        if (skillCooldown > 0)
+        {
+            skillCooldown -= Time.fixedDeltaTime;
+        }
+
+        if (skillFinish > 0)
+        {
+            skillFinish -= Time.fixedDeltaTime;
+        }
     }
 
     private void UpdateAttackState()
@@ -291,6 +347,8 @@ public class PlayerAction : MonoBehaviour
                 {
                     // 공격 범위 처리
                     UpdateAttackAction(value);
+                    doSkill = false;
+                    skillFinish = 0;
 
                     if (isAttackButtonPressing && value >= 0.4f && value <= 0.7f)
                     {
@@ -298,8 +356,7 @@ public class PlayerAction : MonoBehaviour
                     }
                     else if (value > 0.95f)
                     {
-                        actionType = ActionType.RUN;
-                        doAttack = false;
+                        UpdateAttackAndSkillFinish();
                     }
                 }
                 break;
@@ -315,8 +372,7 @@ public class PlayerAction : MonoBehaviour
                     }
                     else if (value > 0.95f)
                     {
-                        actionType = ActionType.RUN;
-                        doAttack = false;
+                        UpdateAttackAndSkillFinish();
                     }
                 }
                 break;
@@ -332,8 +388,7 @@ public class PlayerAction : MonoBehaviour
                     }
                     else if (value > 0.95f)
                     {
-                        actionType = ActionType.RUN;
-                        doAttack = false;
+                        UpdateAttackAndSkillFinish();
                     }
                 }
                 break;
@@ -349,8 +404,7 @@ public class PlayerAction : MonoBehaviour
                     }
                     else if (value > 0.95f)
                     {
-                        actionType = ActionType.RUN;
-                        doAttack = false;
+                        UpdateAttackAndSkillFinish();
                     }
                 }
                 break;
@@ -362,14 +416,57 @@ public class PlayerAction : MonoBehaviour
 
                     if (value > 0.95f)
                     {
-                        actionType = ActionType.RUN;
-                        doAttack = false;
+                        UpdateAttackAndSkillFinish();
+                    }
+                }
+                break;
+            case ActionType.SKILL:
+                if (IsCurrentAnimation(animator, "Skill"))
+                {
+                    // 공격 범위 처리
+                    UpdateSkillAction(value);
+                    doAttack = false;
+
+                    if (value > 0.75f)
+                    {
+                        mapAnimator.SetFloat("GroundSpeed", defaultMapSpeed);
+                        skillFinish = 2.5f;
+                        skillFinishGravityTime = 2f;
+                        UpdateAttackAndSkillFinish();
+                    }
+                }
+                break;
+            case ActionType.SKILLFINISH:
+                if (IsCurrentAnimation(animator, "Skill 0-2"))
+                {
+                    // 공격 범위 처리
+                    UpdateSkillAction(value, 0.45f, 0.6f, 3f);
+                    rigidbody.AddForce(new Vector2(0, 20) * skillFinishGravityTime);
+                    
+                    if (skillFinishGravityTime > 0)
+                    {
+                        skillFinishGravityTime -= Time.fixedDeltaTime;
+                    }
+
+                    doAttack = false;
+
+                    if (value > 0.8f)
+                    {
+                        mapAnimator.SetFloat("GroundSpeed", defaultMapSpeed);
+                        UpdateAttackAndSkillFinish();
                     }
                 }
                 break;
         }
 
         // isAttackButtonPressing = false;
+    }
+
+    private void UpdateAttackAndSkillFinish()
+    {
+        actionType = ActionType.RUN;
+        doAttack = false;
+        doSkill = false;
     }
 
     private void UpdateAttackAction(float value, float startValue = 0.3f, float EndValue = 0.4f)
@@ -379,6 +476,16 @@ public class PlayerAction : MonoBehaviour
         {
             // SetBoxRangeStart(GetBoxAttackRagnePosition(), boxRangeBaseSize);
             doAttack = true;
+        }
+    }
+
+    private void UpdateSkillAction(float value, float startValue = 0.3f, float EndValue = 0.4f, float groundSpeed = 0.3f)
+    {
+        // 공격 범위 처리
+        if (value >= startValue && value < EndValue)
+        {
+            mapAnimator.SetFloat("GroundSpeed", groundSpeed);
+            doSkill = true;
         }
     }
 
@@ -405,19 +512,20 @@ public enum ActionType
     WALK,
     RUN,
     JUMP,
-    DOUBLEJUMP,
+    DOUBLEJUMP, // 5
     TRIPLEJUMP,
     UNDERJUMP,
     ATTACK,
     ATTACK1,
-    ATTACK2,
+    ATTACK2, // 10
     ATTACK3,
     ATTACK4,
     ATTACK5,
     SKILL,
-    SKILL1,
+    SKILL1, // 15
     SKILL2,
     ULTIMATE,
     CHOPPING,
-    FLY
+    FLY,
+    SKILLFINISH // 20
 }

@@ -20,7 +20,7 @@ public class AttackRange : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!PlayerAction.instance.doAttack)
+        if (!PlayerAction.instance.doAttack && !PlayerAction.instance.doSkill)
         {
             return;
         }

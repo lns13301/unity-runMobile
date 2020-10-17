@@ -51,6 +51,14 @@ public class Enemy : MonoBehaviour
         {
             rigidbody.AddForce(new Vector3(800, 500));
         }
+        else if (actionType == ActionType.SKILL)
+        {
+            rigidbody.AddForce(new Vector3(100, 100));
+        }
+        else if (actionType == ActionType.SKILLFINISH)
+        {
+            rigidbody.AddForce(new Vector3(800, 100));
+        }
         else if (actionType != ActionType.ATTACK4)
         {
             rigidbody.AddForce(new Vector3(100, 100));
