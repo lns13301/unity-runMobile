@@ -266,23 +266,18 @@ public class PlayerAction : MonoBehaviour
         jumpCount = 0;
         mapAnimator.SetFloat("GroundSpeed", defaultMapSpeed);
 
-        // Invoke("LandingDelay", 0.5f);
+        actionType = ActionType.RUN;
 
         animator.SetBool("isChopping", false);
         isJumping = false;
-
-        CancelInvoke("SetActiveGroundRange");
-    }
-
-    public void LandingDelay()
-    {
-        actionType = ActionType.RUN;
-        CancelInvoke("LandingDelay");
+        doAttack = false;
+        doSkill = false;
     }
 
     private void SetActiveGroundRange()
     {
         isJumping = true;
+        CancelInvoke("SetActiveGroundRange");
     }
 
     public void DoChopping()
