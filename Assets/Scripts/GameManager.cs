@@ -71,8 +71,46 @@ public class GameManager : MonoBehaviour
     // Game Environmemt
     public Vector3 resolution;
 
+    // Combo Text
+    public int combo;
+    public float comboResetTimer;
+    public TMPro.TextMeshProUGUI comboText;
+
+    public delegate void OnComboTextChange(int value);
+    public OnComboTextChange onComboTextChange;
+
+    public int slotCount
+    {
+        get => combo;
+        set
+        {
+            combo = value;
+            onComboTextChange.Invoke(combo);
+            // playerData.inventorySize = slotCnt;
+        }
+    }
+
+    public void AddCombo(int value = 1)
+    {
+        comboResetTimer = 5f;
+
+        if (value == -1)
+        {
+            combo = 0;
+            comboText.text = "";
+        }
+        else
+        {
+            combo += value;
+            comboText.text = combo + " combo";
+            comboText.gameObject.GetComponent<Animator>().SetTrigger("AddCombo");
+        }
+    }
+
+
     void Start()
     {
+        onComboTextChange += AddCombo;
         isBattle = false;
 
         instance = this;
@@ -87,110 +125,33 @@ public class GameManager : MonoBehaviour
 
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
 
-        try
-        {
-            talkManager = GameObject.Find("TalkManager").GetComponent<TalkManager>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("talkManager");
-        }
+/*        talkManager = GameObject.Find("TalkManager").GetComponent<TalkManager>();
 
-        try
-        {
-            questManager = GameObject.Find("QuestManager").GetComponent<QuestManager>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("questManager");
-        }
-        try
-        {
-            talkPanel = GameObject.Find("TalkSet").GetComponent<Animator>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("talkPanel");
-        }
-        try
-        {
-            portraitAnim = GameObject.Find("PortraitME").GetComponent<Animator>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("portraitAnim");
-        }
-        try
-        {
-            talker = GameObject.Find("Talker").GetComponent<Text>();
-            talkEffect = GameObject.Find("Interaction").GetComponent<TypeEffect>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("talkEffect");
-        }
-        try
-        {
-            playerInventory = GetComponent<PlayerInventory>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("playerInventory");
-        }
-        try
-        {
-            statUI = GameObject.Find("Canvas").GetComponent<StatUI>();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("statUI");
-        }
+        questManager = GameObject.Find("QuestManager").GetComponent<QuestManager>();
+        talkPanel = GameObject.Find("TalkSet").GetComponent<Animator>();
+        portraitAnim = GameObject.Find("PortraitME").GetComponent<Animator>();
+        talker = GameObject.Find("Talker").GetComponent<Text>();
+        talkEffect = GameObject.Find("Interaction").GetComponent<TypeEffect>();
+        playerInventory = GetComponent<PlayerInventory>();
+        statUI = GameObject.Find("Canvas").GetComponent<StatUI>();*/
 
         //playerInventoryItemsTemp.items = playerInventory.items;
         //playerEquipment = GetComponent<PlayerEquipment>();
 
-        try
-        {
-            questManager.questId = playerData.questId;
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("questManagerQuestId");
-        }
-        try
-        {
-            questManager.questActionIndex = playerData.questActionIndex;
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("questManager_questActionIndex");
-        }
+/*        questManager.questId = playerData.questId;
+        questManager.questActionIndex = playerData.questActionIndex;*/
 
         //playerManager.gameObject.transform.position = new Vector3(playerData.playerX, playerData.playerY, 0);
 
-        try
-        {
-            talkPanel.SetBool("isShow", isAction);
+/*        talkPanel.SetBool("isShow", isAction);
 
-            doLoadInventory = false;
+        doLoadInventory = false;
 
-            talkIndex = 0;
-            isQuestTalk = false;
-            isDataChanged = false;
-            isLevelUp = false;
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("talkPanelSettings");
-        }
-        try
-        {
-            questSettings();
-        }
-        catch (Exception)
-        {
-            saveBugReportToJson("questSettingsMethod");
-        }
+        talkIndex = 0;
+        isQuestTalk = false;
+        isDataChanged = false;
+        isLevelUp = false;
+        questSettings();*/
     }
 
     void FixedUpdate()
@@ -209,31 +170,26 @@ public class GameManager : MonoBehaviour
         }
 
         // 게이지 초과할 경우 최대값 보정
-        if (playerData.healthPoint > playerData.healthPointMax)
-        {
-            playerData.healthPoint = playerData.healthPointMax;
-        }
-        if (playerData.manaPoint > playerData.manaPointMax)
-        {
-            playerData.manaPoint = playerData.manaPointMax;
-        }
-
-        if (playerData.healthPoint < 0)
-        {
-            playerData.healthPoint = 0;
-        }
-        if (playerData.manaPoint < 0)
-        {
-            playerData.manaPoint = 0;
-        }
+        UpdateHPMPMax();
 
         if (Input.GetKeyDown(KeyCode.G))
         {
             questSettings();
         }
 
-        // Test
-        //testActive();
+        UpdateComboReset();
+    }
+
+    private void UpdateComboReset()
+    {
+        if (comboResetTimer > 0)
+        {
+            comboResetTimer -= Time.fixedDeltaTime;
+        }
+        if (comboResetTimer <= 0 && combo > 0)
+        {
+            AddCombo(-1);
+        }
     }
 
     public void action(GameObject scanObj)
@@ -977,6 +933,27 @@ public class GameManager : MonoBehaviour
         float z = 1;
 
         gameObject.GetComponent<RectTransform>().localScale = new Vector3(x, y, z);
+    }
+    
+    private void UpdateHPMPMax()
+    {
+        if (playerData.healthPoint > playerData.healthPointMax)
+        {
+            playerData.healthPoint = playerData.healthPointMax;
+        }
+        if (playerData.manaPoint > playerData.manaPointMax)
+        {
+            playerData.manaPoint = playerData.manaPointMax;
+        }
+
+        if (playerData.healthPoint < 0)
+        {
+            playerData.healthPoint = 0;
+        }
+        if (playerData.manaPoint < 0)
+        {
+            playerData.manaPoint = 0;
+        }
     }
 
 /*    public void setPlayerDataByEntityData(BattleEntity battleEntity)

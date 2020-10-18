@@ -158,6 +158,8 @@ public class Enemy : MonoBehaviour
             }
         }*/
 
+        // Combo 상승
+        GameManager.instance.AddCombo();
 
         if (entityData.healthPoint <= 0)
         {
