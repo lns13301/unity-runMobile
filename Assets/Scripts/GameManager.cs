@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     public void AddCombo(int value = 1)
     {
-        comboResetTimer = 5f;
+        comboResetTimer = 7f;
 
         if (value == -1)
         {
@@ -186,6 +186,7 @@ public class GameManager : MonoBehaviour
         {
             comboResetTimer -= Time.fixedDeltaTime;
         }
+
         if (comboResetTimer <= 0 && combo > 0)
         {
             AddCombo(-1);
