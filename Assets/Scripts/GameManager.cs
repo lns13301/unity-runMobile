@@ -79,6 +79,10 @@ public class GameManager : MonoBehaviour
     public delegate void OnComboTextChange(int value);
     public OnComboTextChange onComboTextChange;
 
+    // Character change
+    public delegate void OnHeroDataChange(EntityData entityData);
+    public OnHeroDataChange onHeroDataChange;
+
     public int slotCount
     {
         get => combo;
@@ -90,27 +94,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCombo(int value = 1)
-    {
-        comboResetTimer = 7f;
-
-        if (value == -1)
-        {
-            combo = 0;
-            comboText.text = "";
-        }
-        else
-        {
-            combo += value;
-            comboText.text = combo + " combo";
-            comboText.gameObject.GetComponent<Animator>().SetTrigger("AddCombo");
-        }
-    }
-
+    public 
 
     void Start()
     {
         onComboTextChange += AddCombo;
+        onHeroDataChange += RegisterHeroDataToRange;
         isBattle = false;
 
         instance = this;
@@ -125,33 +114,38 @@ public class GameManager : MonoBehaviour
 
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
 
-/*        talkManager = GameObject.Find("TalkManager").GetComponent<TalkManager>();
+        /*        talkManager = GameObject.Find("TalkManager").GetComponent<TalkManager>();
 
-        questManager = GameObject.Find("QuestManager").GetComponent<QuestManager>();
-        talkPanel = GameObject.Find("TalkSet").GetComponent<Animator>();
-        portraitAnim = GameObject.Find("PortraitME").GetComponent<Animator>();
-        talker = GameObject.Find("Talker").GetComponent<Text>();
-        talkEffect = GameObject.Find("Interaction").GetComponent<TypeEffect>();
-        playerInventory = GetComponent<PlayerInventory>();
-        statUI = GameObject.Find("Canvas").GetComponent<StatUI>();*/
+                questManager = GameObject.Find("QuestManager").GetComponent<QuestManager>();
+                talkPanel = GameObject.Find("TalkSet").GetComponent<Animator>();
+                portraitAnim = GameObject.Find("PortraitME").GetComponent<Animator>();
+                talker = GameObject.Find("Talker").GetComponent<Text>();
+                talkEffect = GameObject.Find("Interaction").GetComponent<TypeEffect>();
+                playerInventory = GetComponent<PlayerInventory>();
+                statUI = GameObject.Find("Canvas").GetComponent<StatUI>();*/
 
         //playerInventoryItemsTemp.items = playerInventory.items;
         //playerEquipment = GetComponent<PlayerEquipment>();
 
-/*        questManager.questId = playerData.questId;
-        questManager.questActionIndex = playerData.questActionIndex;*/
+        /*        questManager.questId = playerData.questId;
+                questManager.questActionIndex = playerData.questActionIndex;*/
 
         //playerManager.gameObject.transform.position = new Vector3(playerData.playerX, playerData.playerY, 0);
 
-/*        talkPanel.SetBool("isShow", isAction);
+        /*        talkPanel.SetBool("isShow", isAction);
 
-        doLoadInventory = false;
+                doLoadInventory = false;
 
-        talkIndex = 0;
-        isQuestTalk = false;
-        isDataChanged = false;
-        isLevelUp = false;
-        questSettings();*/
+                talkIndex = 0;
+                isQuestTalk = false;
+                isDataChanged = false;
+                isLevelUp = false;
+                questSettings();*/
+
+        // 나중 바꿔야 함, 우선 Raccon의 EntityData를 PlayerData 0 으로 지정
+        playerData.entityDatas.Add(PlayerAction.instance.transform.GetChild(1).GetComponent<HeroData>().entityData);
+        playerData.heroIndex = 0;
+        RegisterHeroDataToRange(playerData.entityDatas[playerData.heroIndex]);
     }
 
     void FixedUpdate()
@@ -191,6 +185,29 @@ public class GameManager : MonoBehaviour
         {
             AddCombo(-1);
         }
+    }
+
+    public void AddCombo(int value = 1)
+    {
+        comboResetTimer = 7f;
+
+        if (value == -1)
+        {
+            combo = 0;
+            comboText.text = "";
+        }
+        else
+        {
+            combo += value;
+            comboText.text = combo + " combo";
+            comboText.gameObject.GetComponent<Animator>().SetTrigger("AddCombo");
+        }
+    }
+
+    public void RegisterHeroDataToRange(EntityData entityData)
+    {
+        PlayerAction.instance.boxRange.GetComponent<AttackRange>().selectedHero = entityData;
+        PlayerAction.instance.groundRange.GetComponent<GroundRange>().selectedHero = entityData;
     }
 
     public void action(GameObject scanObj)

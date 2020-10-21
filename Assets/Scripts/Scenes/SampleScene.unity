@@ -2828,7 +2828,8 @@ MonoBehaviour:
     charm: 0
     sortingIndex: 0
     skills: []
-    entityData: []
+    entityDatas: []
+    heroIndex: 0
   isMobile: 1
   doLoadInventory: 0
   playerInventory: {fileID: 0}
@@ -2866,7 +2867,8 @@ MonoBehaviour:
     charm: 0
     sortingIndex: 0
     skills: []
-    entityData: []
+    entityDatas: []
+    heroIndex: 0
   playerEquipment: {fileID: 0}
   playerEquipmentItemsTemp:
     playerX: 0
@@ -2902,7 +2904,8 @@ MonoBehaviour:
     charm: 0
     sortingIndex: 0
     skills: []
-    entityData: []
+    entityDatas: []
+    heroIndex: 0
   fishingPlayerInventoryItemsTemp:
     playerX: 0
     playerY: 0
@@ -2937,7 +2940,8 @@ MonoBehaviour:
     charm: 0
     sortingIndex: 0
     skills: []
-    entityData: []
+    entityDatas: []
+    heroIndex: 0
   expTable:
     expTable: 
   expTextAsset: {fileID: 0}
@@ -3004,7 +3008,8 @@ MonoBehaviour:
         charm: 0
         sortingIndex: 0
         skills: []
-        entityData: []
+        entityDatas: []
+        heroIndex: 0
   questStartButton: {fileID: 0}
   questClearButton: {fileID: 0}
   talkQuestPanel: {fileID: 0}
@@ -32423,23 +32428,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData:
-    entityName: 
+    entityName: Raccon
     code: 0
     playerX: 0
     playerY: 0
-    element: 0
-    rating: 0
-    level: 0
+    element: 3
+    rating: 1
+    level: 1
     exp: 0
     nextExp: 0
     items: []
-    power: 0
-    armor: 0
-    magicPower: 0
-    magicArmor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
+    power: 40
+    armor: 3
+    magicPower: 4
+    magicArmor: 2
+    accuracy: 5
+    avoid: 2
+    critRate: 5
     critDam: 0
     healthPoint: 0
     healthPointMax: 0

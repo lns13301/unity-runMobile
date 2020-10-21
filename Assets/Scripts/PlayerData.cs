@@ -48,7 +48,8 @@ public class PlayerData
     public int sortingIndex;
 
     public List<Skill> skills;
-    public List<EntityData> entityData;
+    public List<EntityData> entityDatas;
+    public int heroIndex;
 
     //Equipments
     /*    public int reinforce;
