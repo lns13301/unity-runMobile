@@ -3434,7 +3434,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2def89b4f40beae4aa4020522c5cb6a1, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -10139,6 +10139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isUIOn: 0
   heroUI: {fileID: 783805925}
+  isPause: 0
 --- !u!114 &2011207961
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,12 +11,15 @@ public class MenuButton : MonoBehaviour
 
     public GameObject heroUI;
 
+    public bool isPause = false;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = transform.parent.GetComponent<Animator>();
         heroUIAnimator = heroUI.GetComponent<Animator>();
         isUIOn = false;
+
     }
 
     // Update is called once per frame
@@ -39,23 +42,41 @@ public class MenuButton : MonoBehaviour
         }
     }
 
+    // 영웅 정보창
     public void ButtonHeroUIOnOff()
     {
         if (heroUI.activeSelf)
         {
             heroUI.SetActive(false);
+            DoPause(false);
         }
         else
         {
             heroUI.SetActive(true);
-            heroUIAnimator.SetTrigger("doUIOn");
-            Invoke("OnCharacterIllust", 0.5f);
+            Invoke("OnCharacterIllust", 0.3f);
         }
     }
 
     public void OnCharacterIllust()
     {
         heroUIAnimator.SetTrigger("doCharacterIllustOn");
+        heroUIAnimator.SetTrigger("doUIOn");
+        DoPause(true);
+
         CancelInvoke("OnCharacterIllust");
+    }
+
+    public void DoPause(bool isPause)
+    {
+        this.isPause = isPause;
+
+        Time.timeScale = (isPause) ? 0.0f : 1.0f;
+
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        if (isPause)
+        {
+            GetComponent<MonoBehaviour>().enabled = true;
+        }
     }
 }
