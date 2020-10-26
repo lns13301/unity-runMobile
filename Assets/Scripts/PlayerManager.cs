@@ -298,7 +298,7 @@ public class PlayerManager : MonoBehaviour
             }
         }*/
 
-    void onDamaged(Vector2 targetPos, bool isMiss, float damageValue)
+/*    void onDamaged(Vector2 targetPos, bool isMiss, float damageValue)
     {
         statUI.isDataChanged = true;
 
@@ -328,7 +328,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         Invoke("offDamage", 3);
-    }
+    }*/
 
     void offDamage()
     {
@@ -336,7 +336,7 @@ public class PlayerManager : MonoBehaviour
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
-    public bool isHit(int accuracy)
+/*    public bool isHit(int accuracy)
     {
         int hit = accuracy - GameManager.instance.playerData.avoid;
 
@@ -351,7 +351,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         return true;
-    }
+    }*/
 
     public void progressTalk(GameObject gameObject)
     {

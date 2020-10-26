@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class EntityData
@@ -40,6 +41,8 @@ public class EntityData
 
     public float expStack;
     public int sortingIndex;
+
+    public Sprite spriteIcon;
 
     // Start is called before the first frame update
     void Start()

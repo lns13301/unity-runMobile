@@ -33,10 +33,7 @@ public class GameManager : MonoBehaviour
     public bool isMobile = true;
     public bool doLoadInventory;
     public PlayerInventory playerInventory;
-    public PlayerData playerInventoryItemsTemp;
     public PlayerEquipment playerEquipment;
-    public PlayerData playerEquipmentItemsTemp;
-    public PlayerData fishingPlayerInventoryItemsTemp;
     public ExpTable expTable;
     public TextAsset expTextAsset;
     public StatUI statUI;
@@ -143,9 +140,9 @@ public class GameManager : MonoBehaviour
                 questSettings();*/
 
         // 나중 바꿔야 함, 우선 Raccon의 EntityData를 PlayerData 0 으로 지정
-        playerData.entityDatas.Add(PlayerAction.instance.transform.GetChild(1).GetComponent<HeroData>().entityData);
+        playerData.heroDatas.Add(PlayerAction.instance.transform.GetChild(1).GetComponent<HeroData>().entityData);
         playerData.heroIndex = 0;
-        RegisterHeroDataToRange(playerData.entityDatas[playerData.heroIndex]);
+        RegisterHeroDataToRange(playerData.heroDatas[playerData.heroIndex]);
     }
 
     void FixedUpdate()
@@ -164,7 +161,7 @@ public class GameManager : MonoBehaviour
         }
 
         // 게이지 초과할 경우 최대값 보정
-        UpdateHPMPMax();
+        // UpdateHPMPMax();
 
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -592,7 +589,7 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(path, jsonData);
     }
 
-    public void saveAndLoadPlayerInventoryTemp()
+/*    public void saveAndLoadPlayerInventoryTemp()
     {
         playerInventoryItemsTemp.items = PlayerInventory.instance.items;
 
@@ -603,6 +600,18 @@ public class GameManager : MonoBehaviour
         playerInventoryItemsTemp = JsonUtility.FromJson<PlayerData>(jsonData);
         PlayerInventory.instance.items = playerInventoryItemsTemp.items;
     }
+
+    public void saveAndLoadHeroInventoryTemp()
+    {
+        heroInventoryItemsTemp.items = HeroInventory.instance.items;
+
+        string jsonData = JsonUtility.ToJson(heroInventoryItemsTemp, true);
+        File.WriteAllText(saveOrLoad(isMobile, true, "heroInventoryItemsTemp"), jsonData);
+
+        jsonData = File.ReadAllText(saveOrLoad(isMobile, false, "heroInventoryItemsTemp"));
+        heroInventoryItemsTemp = JsonUtility.FromJson<PlayerData>(jsonData);
+        HeroInventory.instance.items = heroInventoryItemsTemp.items;
+    }*/
 
     public void saveAndLoadPlayerEquipmentTemp()
     {
@@ -616,7 +625,7 @@ public class GameManager : MonoBehaviour
         GetComponent<PlayerEquipment>().items = playerEquipmentItemsTemp.equipments;*/
     }
 
-    [ContextMenu("From Json Data")]
+    /*[ContextMenu("From Json Data")]
     public void loadPlayerDataFromJson()
     {
         string sDirPath;
@@ -638,10 +647,10 @@ public class GameManager : MonoBehaviour
             string jsonData = File.ReadAllText(saveOrLoad(isMobile, false, "playerData"));
             playerData = JsonUtility.FromJson<PlayerData>(jsonData);
 
-            playerData = Calculator.calcAll(playerData);
+            playerData = Calculator.calcAll(heroData);
 
             // 버전 변경 시 스프라이트 이미지 코드가 변경되는 현상 막기
-/*            for (int i = 0; i < playerData.items.Count; i++)
+*//*            for (int i = 0; i < playerData.items.Count; i++)
             {
                 playerData.items[i].spritePath = ItemDatabase.instance.findItemByCode(playerData.items[i].code).spritePath;
                 playerData.items[i].sprite = playerData.items[i].loadSprite(playerData.items[i].spritePath);
@@ -650,7 +659,7 @@ public class GameManager : MonoBehaviour
                 {
                     playerData.items[i].spriteAnimator = playerData.items[i].loadAnimator(playerData.items[i].spriteAnimatorPath);
                 }
-            }*/
+            }*//*
         }
         catch (FileNotFoundException)
         {
@@ -747,7 +756,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("세이브");
             savePlayerDataToJsonMobile();
         }
-    }
+    }*/
 
     void saveBugReportToJson(string message)
     {
@@ -872,7 +881,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Canvas").GetComponent<StatUI>().isDataChanged = true;
     }
 
-    public void levelUp()
+/*    public void levelUp()
     {
         if (playerData.exp > expTable.expTable[playerData.level - 1] - 1)
         {
@@ -889,14 +898,14 @@ public class GameManager : MonoBehaviour
 
             playerManager.isLevelUp = true;
         }
-    }
+    }*/
 
-    public void addExp(int exp)
+/*    public void addExp(int exp)
     {
         playerData.exp += exp;
         statUI.isDataChanged = true;
         levelUp();
-    }
+    }*/
 
     // 시작조건에 부합하는 퀘스트를 정렬
     public void questSettings()
@@ -953,7 +962,7 @@ public class GameManager : MonoBehaviour
         gameObject.GetComponent<RectTransform>().localScale = new Vector3(x, y, z);
     }
     
-    private void UpdateHPMPMax()
+/*    private void UpdateHPMPMax()
     {
         if (playerData.healthPoint > playerData.healthPointMax)
         {
@@ -972,7 +981,7 @@ public class GameManager : MonoBehaviour
         {
             playerData.manaPoint = 0;
         }
-    }
+    }*/
 
 /*    public void setPlayerDataByEntityData(BattleEntity battleEntity)
     {

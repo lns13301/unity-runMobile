@@ -152,7 +152,7 @@ public class StatUI : MonoBehaviour
             moneyText.text = "보유 핀 : " + GameManager.instance.playerData.money;
             beneficenceScoreText.text = "선행 점수 : " + GameManager.instance.playerData.fame;
 
-            hpText.text = GameManager.instance.playerData.healthPoint + " / " + GameManager.instance.playerData.healthPointMax;
+/*            hpText.text = GameManager.instance.playerData.healthPoint + " / " + GameManager.instance.playerData.healthPointMax;
             mpText.text = GameManager.instance.playerData.manaPoint + " / " + GameManager.instance.playerData.manaPointMax;
             expText.text = GameManager.instance.playerData.exp + " / " + GameManager.instance.playerData.nextExp;
             powerText.text = "" + GameManager.instance.playerData.power;
@@ -162,7 +162,7 @@ public class StatUI : MonoBehaviour
             accuracyText.text = "" + GameManager.instance.playerData.accuracy;
             avoidText.text = "" + GameManager.instance.playerData.avoid;
             critRateText.text = "" + Mathf.Round(GameManager.instance.playerData.critRate * 10) / 10 + "%";
-            critDamText.text = "" + Mathf.Round(GameManager.instance.playerData.critDam * 10) / 10 + "%";
+            critDamText.text = "" + Mathf.Round(GameManager.instance.playerData.critDam * 10) / 10 + "%";*/
         }
         catch (NullReferenceException)
         {

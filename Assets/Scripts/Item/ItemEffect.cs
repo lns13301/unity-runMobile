@@ -20,7 +20,7 @@ public class ItemEffect
 
     public void useItem()
     {
-        if (isHPPercent)
+/*        if (isHPPercent)
         {
             GameManager.instance.playerData.healthPoint += GameManager.instance.playerData.healthPointMax / 100 * healthPoint;
         }
@@ -36,6 +36,6 @@ public class ItemEffect
         else
         {
             GameManager.instance.playerData.manaPoint += manaPoint;
-        }
+        }*/
     }
 }

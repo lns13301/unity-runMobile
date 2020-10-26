@@ -96,7 +96,7 @@ public class PlayerInventory : MonoBehaviour
             }
 
             // 인벤토리 오류 임시 방편
-            GetComponent<GameManager>().saveAndLoadPlayerInventoryTemp();
+            // GetComponent<GameManager>().saveAndLoadPlayerInventoryTemp();
 
             if (quantity == 0)
             {
@@ -129,7 +129,7 @@ public class PlayerInventory : MonoBehaviour
                     items[itemsIndex[i]].count = 100;
 
                     // 인벤토리 오류 임시 방편
-                    GameManager.instance.saveAndLoadPlayerInventoryTemp();
+                    // GameManager.instance.saveAndLoadPlayerInventoryTemp();
                 }
             }
         }
@@ -143,7 +143,7 @@ public class PlayerInventory : MonoBehaviour
                 items.Add(instanceItem);
 
                 // 인벤토리 오류 임시 방편
-                GameManager.instance.saveAndLoadPlayerInventoryTemp();
+                // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
                 onChangeItem.Invoke();
             }
@@ -166,7 +166,7 @@ public class PlayerInventory : MonoBehaviour
             items.RemoveAt(slotNumber);
 
             // 인벤토리 오류 임시 방편
-            GameManager.instance.saveAndLoadPlayerInventoryTemp();
+            // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
             GameManager.instance.isDataChange();
             onChangeItem.Invoke();
@@ -179,7 +179,7 @@ public class PlayerInventory : MonoBehaviour
             items.RemoveAt(slotNumber);
 
             // 인벤토리 오류 임시 방편
-            GameManager.instance.saveAndLoadPlayerInventoryTemp();
+            // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
             GameManager.instance.isDataChange();
             onChangeItem.Invoke();
@@ -215,7 +215,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         // 인벤토리 오류 임시 방편
-        GameManager.instance.saveAndLoadPlayerInventoryTemp();
+        // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
         GameManager.instance.isDataChange();
         onChangeItem.Invoke();
@@ -239,7 +239,7 @@ public class PlayerInventory : MonoBehaviour
                         items.RemoveAt(i);
 
                         // 인벤토리 오류 임시 방편
-                        GameManager.instance.saveAndLoadPlayerInventoryTemp();
+                        // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
                         GameManager.instance.isDataChange();
                         onChangeItem.Invoke();
@@ -249,7 +249,7 @@ public class PlayerInventory : MonoBehaviour
                     items[i].count -= quantity;
 
                     // 인벤토리 오류 임시 방편
-                    GameManager.instance.saveAndLoadPlayerInventoryTemp();
+                    // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
                     GameManager.instance.isDataChange();
                     onChangeItem.Invoke();
@@ -264,7 +264,7 @@ public class PlayerInventory : MonoBehaviour
                 if (quantity <= 0)
                 {
                     // 인벤토리 오류 임시 방편
-                    GameManager.instance.saveAndLoadPlayerInventoryTemp();
+                    // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
                     GameManager.instance.isDataChange();
                     onChangeItem.Invoke();
@@ -274,7 +274,7 @@ public class PlayerInventory : MonoBehaviour
         }
 
         // 인벤토리 오류 임시 방편
-        GameManager.instance.saveAndLoadPlayerInventoryTemp();
+        // GameManager.instance.saveAndLoadPlayerInventoryTemp();
 
         GameManager.instance.isDataChange();
         onChangeItem.Invoke();

@@ -547,6 +547,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
 --- !u!1001 &85812700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1388,10 +1389,10 @@ RectTransform:
   m_Father: {fileID: 790573454324762874}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -20}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &341737343
 MonoBehaviour:
@@ -1402,75 +1403,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 341737341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 2017253352}
-  itemCount: {fileID: 1042520263}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &341737344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,6 +1624,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   rigidbody: {fileID: 374045244}
   damagedTimer: 0
   healthBarBackground: {fileID: 15792591}
@@ -2718,6 +2687,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   rigidbody: {fileID: 0}
   damagedTimer: 0
   healthBarBackground: {fileID: 0}
@@ -3140,142 +3110,80 @@ MonoBehaviour:
     nextExp: 0
     money: 0
     gold: 0
-    inventorySize: 0
+    inventorySize: 3
     items: []
     startQuest: 
     currentQuest: []
     clearQuest: 
-    power: 0
-    armor: 0
-    magicPower: 0
-    magicArmor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    healthPoint: 0
-    healthPointMax: 0
-    manaPoint: 0
-    manaPointMax: 0
     expEff: 0
     fame: 0
     charm: 0
     sortingIndex: 0
     skills: []
-    entityDatas: []
+    heroDatas:
+    - entityName: "\uB108\uAD6C\uB9AC"
+      code: 0
+      playerX: 0
+      playerY: 0
+      element: 3
+      rating: 1
+      level: 8
+      exp: 0
+      nextExp: 0
+      items: []
+      power: 50
+      armor: 5
+      magicPower: 5
+      magicArmor: 2
+      accuracy: 0
+      avoid: 0
+      critRate: 0
+      critDam: 0
+      healthPoint: 0
+      healthPointMax: 0
+      manaPoint: 0
+      manaPointMax: 0
+      expEff: 0
+      fame: 0
+      charm: 0
+      skills: []
+      expStack: 0
+      sortingIndex: 0
+      spriteIcon: {fileID: 21300000, guid: e88cec43ff320ba459f52e949931da18, type: 3}
+    - entityName: "\uB3C5\uC218\uB9AC"
+      code: 1
+      playerX: 0
+      playerY: 0
+      element: 5
+      rating: 0
+      level: 4
+      exp: 0
+      nextExp: 0
+      items: []
+      power: 30
+      armor: 10
+      magicPower: 5
+      magicArmor: 2
+      accuracy: 0
+      avoid: 0
+      critRate: 0
+      critDam: 0
+      healthPoint: 0
+      healthPointMax: 0
+      manaPoint: 0
+      manaPointMax: 0
+      expEff: 0
+      fame: 0
+      charm: 0
+      skills: []
+      expStack: 0
+      sortingIndex: 0
+      spriteIcon: {fileID: 21300000, guid: 97df67bcb21ba6f4eb99cc51606a2d38, type: 3}
     heroIndex: 0
   isMobile: 1
   doLoadInventory: 0
   playerInventory: {fileID: 0}
-  playerInventoryItemsTemp:
-    playerX: 0
-    playerY: 0
-    questId: 0
-    questActionIndex: 0
-    name: 
-    job: 0
-    level: 0
-    exp: 5
-    nextExp: 0
-    money: 0
-    gold: 0
-    inventorySize: 0
-    items: []
-    startQuest: 
-    currentQuest: []
-    clearQuest: 
-    power: 0
-    armor: 0
-    magicPower: 0
-    magicArmor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    healthPoint: 0
-    healthPointMax: 0
-    manaPoint: 0
-    manaPointMax: 0
-    expEff: 0
-    fame: 0
-    charm: 0
-    sortingIndex: 0
-    skills: []
-    entityDatas: []
-    heroIndex: 0
   playerEquipment: {fileID: 0}
-  playerEquipmentItemsTemp:
-    playerX: 0
-    playerY: 0
-    questId: 0
-    questActionIndex: 0
-    name: 
-    job: 0
-    level: 0
-    exp: 5
-    nextExp: 0
-    money: 0
-    gold: 0
-    inventorySize: 0
-    items: []
-    startQuest: 
-    currentQuest: []
-    clearQuest: 
-    power: 0
-    armor: 0
-    magicPower: 0
-    magicArmor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    healthPoint: 0
-    healthPointMax: 0
-    manaPoint: 0
-    manaPointMax: 0
-    expEff: 0
-    fame: 0
-    charm: 0
-    sortingIndex: 0
-    skills: []
-    entityDatas: []
-    heroIndex: 0
-  fishingPlayerInventoryItemsTemp:
-    playerX: 0
-    playerY: 0
-    questId: 0
-    questActionIndex: 0
-    name: 
-    job: 0
-    level: 0
-    exp: 5
-    nextExp: 0
-    money: 0
-    gold: 0
-    inventorySize: 0
-    items: []
-    startQuest: 
-    currentQuest: []
-    clearQuest: 
-    power: 0
-    armor: 0
-    magicPower: 0
-    magicArmor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    healthPoint: 0
-    healthPointMax: 0
-    manaPoint: 0
-    manaPointMax: 0
-    expEff: 0
-    fame: 0
-    charm: 0
-    sortingIndex: 0
-    skills: []
-    entityDatas: []
-    heroIndex: 0
   expTable:
     expTable: 
   expTextAsset: {fileID: 0}
@@ -3325,24 +3233,12 @@ MonoBehaviour:
         startQuest: 
         currentQuest: []
         clearQuest: 
-        power: 0
-        armor: 0
-        magicPower: 0
-        magicArmor: 0
-        accuracy: 0
-        avoid: 0
-        critRate: 0
-        critDam: 0
-        healthPoint: 0
-        healthPointMax: 0
-        manaPoint: 0
-        manaPointMax: 0
         expEff: 0
         fame: 0
         charm: 0
         sortingIndex: 0
         skills: []
-        entityDatas: []
+        heroDatas: []
         heroIndex: 0
   questStartButton: {fileID: 0}
   questClearButton: {fileID: 0}
@@ -3373,6 +3269,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f697ee237c409b04482ce43f15a6aef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData:
+    playerX: 0
+    playerY: 0
+    questId: 0
+    questActionIndex: 0
+    name: 
+    job: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    money: 0
+    gold: 0
+    inventorySize: 0
+    items: []
+    startQuest: 
+    currentQuest: []
+    clearQuest: 
+    expEff: 0
+    fame: 0
+    charm: 0
+    sortingIndex: 0
+    skills: []
+    heroDatas: []
+    heroIndex: 0
+  heroDatas: []
 --- !u!1 &783805925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,13 +3305,14 @@ GameObject:
   - component: {fileID: 783805926}
   - component: {fileID: 783805927}
   - component: {fileID: 783805928}
+  - component: {fileID: 783805929}
   m_Layer: 5
   m_Name: HeroUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &783805926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3441,6 +3363,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &783805929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783805925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd9faa77418ee34dadc94d6c9ea18f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroInventory: {fileID: 0}
+  slots: []
+  slotHolder: {fileID: 790573454324762874}
 --- !u!1001 &803006053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6893,6 +6830,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   rigidbody: {fileID: 1540465574}
   damagedTimer: 0
   healthBarBackground: {fileID: 2082196971}
@@ -7415,10 +7353,10 @@ RectTransform:
   m_Father: {fileID: 790573454324762874}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 570, y: -20}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1604638016
 MonoBehaviour:
@@ -7429,75 +7367,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1604638014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1127573561}
-  itemCount: {fileID: 1588569713}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1604638017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8053,10 +7958,10 @@ RectTransform:
   m_Father: {fileID: 790573454324762874}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 390, y: -20}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1717406597
 MonoBehaviour:
@@ -8067,75 +7972,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1717406595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1798394928}
-  itemCount: {fileID: 851332048}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1717406598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8433,6 +8305,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   rigidbody: {fileID: 1752862234}
   damagedTimer: 0
   healthBarBackground: {fileID: 1465064971}
@@ -8913,6 +8786,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   tileGameObject: {fileID: 0}
 --- !u!1001 &1817205092
 PrefabInstance:
@@ -32748,6 +32622,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
   rigidbody: {fileID: 2110697279}
   damagedTimer: 0
   healthBarBackground: {fileID: 8580863394966312517}
@@ -32871,6 +32746,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
 --- !u!114 &790573453752028856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33151,7 +33027,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.000042828688}
-  m_SizeDelta: {x: 0, y: 180}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &790573454324762875
 GameObject:
@@ -33450,84 +33326,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!114 &790573454723381857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790573454723381859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 790573454399343832}
-  itemCount: {fileID: 790573454453479647}
-  itemMenuSet: {fileID: 0}
 --- !u!224 &790573454723381858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33544,10 +33342,10 @@ RectTransform:
   m_Father: {fileID: 790573454324762874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -20}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &790573454723381859
 GameObject:
@@ -33562,7 +33360,7 @@ GameObject:
   - component: {fileID: 790573454723381862}
   - component: {fileID: 790573454723381863}
   - component: {fileID: 790573454723381856}
-  - component: {fileID: 790573454723381857}
+  - component: {fileID: 790573454723381860}
   m_Layer: 5
   m_Name: Slot (0)
   m_TagString: Untagged
@@ -33570,6 +33368,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &790573454723381860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790573454723381859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!222 &790573454723381861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34758,7 +34601,7 @@ GameObject:
   - component: {fileID: 1655838913509815611}
   - component: {fileID: 1655838913509815608}
   - component: {fileID: 1655838913509815609}
-  - component: {fileID: 1655838913509815750}
+  - component: {fileID: 1655838913509815749}
   m_Layer: 5
   m_Name: Slot (20)
   m_TagString: Untagged
@@ -34766,7 +34609,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838913509815750
+--- !u!114 &1655838913509815749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34775,75 +34618,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913509815748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915133585399}
-  itemCount: {fileID: 1655838915258170525}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838913509815751
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35127,75 +34937,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913518598555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915451035798}
-  itemCount: {fileID: 1655838914823164495}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838913518598558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35713,75 +35490,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913683110243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914012735404}
-  itemCount: {fileID: 1655838914228491426}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838913683110246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36036,7 +35780,7 @@ GameObject:
   - component: {fileID: 1655838913718490443}
   - component: {fileID: 1655838913718490440}
   - component: {fileID: 1655838913718490441}
-  - component: {fileID: 1655838913718490454}
+  - component: {fileID: 1655838913718490453}
   m_Layer: 5
   m_Name: Slot (13)
   m_TagString: Untagged
@@ -36044,7 +35788,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838913718490454
+--- !u!114 &1655838913718490453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36053,75 +35797,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913718490452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913899911334}
-  itemCount: {fileID: 1655838915027331691}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838913718490455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36620,7 +36331,7 @@ GameObject:
   - component: {fileID: 1655838913842970985}
   - component: {fileID: 1655838913842970998}
   - component: {fileID: 1655838913842970999}
-  - component: {fileID: 1655838913842970996}
+  - component: {fileID: 1655838913842970995}
   m_Layer: 5
   m_Name: Slot (17)
   m_TagString: Untagged
@@ -36628,7 +36339,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838913842970996
+--- !u!114 &1655838913842970995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36637,75 +36348,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913842970994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914765889349}
-  itemCount: {fileID: 1655838914413603536}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838913842970997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36931,75 +36609,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913857257005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913829368536}
-  itemCount: {fileID: 1655838914476124387}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838913860394136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37168,84 +36813,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1655838913901957280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655838913901957294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913692156058}
-  itemCount: {fileID: 1655838914012709600}
-  itemMenuSet: {fileID: 0}
 --- !u!224 &1655838913901957281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37375,7 +36942,7 @@ GameObject:
   - component: {fileID: 1655838913901957285}
   - component: {fileID: 1655838913901957282}
   - component: {fileID: 1655838913901957283}
-  - component: {fileID: 1655838913901957280}
+  - component: {fileID: 1655838913901957295}
   m_Layer: 5
   m_Name: Slot (21)
   m_TagString: Untagged
@@ -37383,6 +36950,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1655838913901957295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655838913901957294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!222 &1655838913908115505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37587,75 +37199,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838913953305867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913762077139}
-  itemCount: {fileID: 1655838915529532441}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838913953305870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38169,7 +37748,7 @@ GameObject:
   - component: {fileID: 1655838914019849305}
   - component: {fileID: 1655838914019849318}
   - component: {fileID: 1655838914019849319}
-  - component: {fileID: 1655838914019849316}
+  - component: {fileID: 1655838914019849315}
   m_Layer: 5
   m_Name: Slot (15)
   m_TagString: Untagged
@@ -38177,7 +37756,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914019849316
+--- !u!114 &1655838914019849315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38186,75 +37765,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914019849314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914895782847}
-  itemCount: {fileID: 1655838914901616163}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914019849317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38347,7 +37893,7 @@ GameObject:
   - component: {fileID: 1655838914033295599}
   - component: {fileID: 1655838914033295596}
   - component: {fileID: 1655838914033295597}
-  - component: {fileID: 1655838914033295594}
+  - component: {fileID: 1655838914033295593}
   m_Layer: 5
   m_Name: Slot (11)
   m_TagString: Untagged
@@ -38355,7 +37901,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914033295594
+--- !u!114 &1655838914033295593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38364,75 +37910,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914033295592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914726736154}
-  itemCount: {fileID: 1655838914268087385}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914033295595
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38623,75 +38136,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914041583691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915115500872}
-  itemCount: {fileID: 1655838914467692003}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838914041583694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38872,7 +38352,7 @@ GameObject:
   - component: {fileID: 1655838914134115955}
   - component: {fileID: 1655838914134115952}
   - component: {fileID: 1655838914134115953}
-  - component: {fileID: 1655838914134115966}
+  - component: {fileID: 1655838914134115965}
   m_Layer: 5
   m_Name: Slot (4)
   m_TagString: Untagged
@@ -38880,7 +38360,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914134115966
+--- !u!114 &1655838914134115965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38889,75 +38369,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914134115964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913531126258}
-  itemCount: {fileID: 1655838913559555675}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914134115967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39161,7 +38608,7 @@ GameObject:
   - component: {fileID: 1655838914163215011}
   - component: {fileID: 1655838914163215008}
   - component: {fileID: 1655838914163215009}
-  - component: {fileID: 1655838914163215022}
+  - component: {fileID: 1655838914163215021}
   m_Layer: 5
   m_Name: Slot (27)
   m_TagString: Untagged
@@ -39169,7 +38616,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914163215022
+--- !u!114 &1655838914163215021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39178,75 +38625,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914163215020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914142846392}
-  itemCount: {fileID: 1655838914169577478}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914163215023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39473,75 +38887,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914222989011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913752116180}
-  itemCount: {fileID: 1655838913908115518}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838914222989014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39910,7 +39291,7 @@ GameObject:
   - component: {fileID: 1655838914268679475}
   - component: {fileID: 1655838914268679472}
   - component: {fileID: 1655838914268679473}
-  - component: {fileID: 1655838914268679486}
+  - component: {fileID: 1655838914268679485}
   m_Layer: 5
   m_Name: Slot (29)
   m_TagString: Untagged
@@ -39918,7 +39299,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914268679486
+--- !u!114 &1655838914268679485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39927,75 +39308,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914268679484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915457721061}
-  itemCount: {fileID: 1655838915240467142}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914268679487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40017,84 +39365,6 @@ RectTransform:
   m_AnchoredPosition: {x: 930, y: -740}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1655838914342463120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655838914342463134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915311460530}
-  itemCount: {fileID: 1655838914705860113}
-  itemMenuSet: {fileID: 0}
 --- !u!224 &1655838914342463121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40224,7 +39494,7 @@ GameObject:
   - component: {fileID: 1655838914342463125}
   - component: {fileID: 1655838914342463122}
   - component: {fileID: 1655838914342463123}
-  - component: {fileID: 1655838914342463120}
+  - component: {fileID: 1655838914342463135}
   m_Layer: 5
   m_Name: Slot (28)
   m_TagString: Untagged
@@ -40232,6 +39502,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1655838914342463135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655838914342463134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914385516264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40321,84 +39636,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!114 &1655838914409127881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655838914409127895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914518627455}
-  itemCount: {fileID: 1655838915519281705}
-  itemMenuSet: {fileID: 0}
 --- !u!114 &1655838914409127882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40513,7 +39750,7 @@ GameObject:
   - component: {fileID: 1655838914409127882}
   - component: {fileID: 1655838914409127883}
   - component: {fileID: 1655838914409127880}
-  - component: {fileID: 1655838914409127881}
+  - component: {fileID: 1655838914409127896}
   m_Layer: 5
   m_Name: Slot (24)
   m_TagString: Untagged
@@ -40521,6 +39758,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1655838914409127896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655838914409127895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838914413603536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41524,7 +40806,7 @@ GameObject:
   - component: {fileID: 1655838914578834499}
   - component: {fileID: 1655838914578834496}
   - component: {fileID: 1655838914578834497}
-  - component: {fileID: 1655838914578834510}
+  - component: {fileID: 1655838914578834509}
   m_Layer: 5
   m_Name: Slot (14)
   m_TagString: Untagged
@@ -41532,7 +40814,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914578834510
+--- !u!114 &1655838914578834509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41541,75 +40823,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914578834508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915303265851}
-  itemCount: {fileID: 1655838915094722753}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914578834511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41644,7 +40893,7 @@ GameObject:
   - component: {fileID: 1655838914597430907}
   - component: {fileID: 1655838914597430904}
   - component: {fileID: 1655838914597430905}
-  - component: {fileID: 1655838914597430790}
+  - component: {fileID: 1655838914597430789}
   m_Layer: 5
   m_Name: Slot (26)
   m_TagString: Untagged
@@ -41652,7 +40901,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914597430790
+--- !u!114 &1655838914597430789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41661,75 +40910,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914597430788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914532104319}
-  itemCount: {fileID: 1655838915040364484}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914597430791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42066,84 +41282,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!114 &1655838914736154921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655838914736154935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913649934281}
-  itemCount: {fileID: 1655838913992304550}
-  itemMenuSet: {fileID: 0}
 --- !u!114 &1655838914736154922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42258,7 +41396,7 @@ GameObject:
   - component: {fileID: 1655838914736154922}
   - component: {fileID: 1655838914736154923}
   - component: {fileID: 1655838914736154920}
-  - component: {fileID: 1655838914736154921}
+  - component: {fileID: 1655838914736154936}
   m_Layer: 5
   m_Name: Slot (8)
   m_TagString: Untagged
@@ -42266,6 +41404,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1655838914736154936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655838914736154935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914765889346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42542,7 +41725,7 @@ GameObject:
   - component: {fileID: 1655838914814211571}
   - component: {fileID: 1655838914814211568}
   - component: {fileID: 1655838914814211569}
-  - component: {fileID: 1655838914814211582}
+  - component: {fileID: 1655838914814211581}
   m_Layer: 5
   m_Name: Slot (16)
   m_TagString: Untagged
@@ -42550,7 +41733,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914814211582
+--- !u!114 &1655838914814211581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42559,75 +41742,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914814211580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838913760245312}
-  itemCount: {fileID: 1655838913514947174}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914814211583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43019,7 +42169,7 @@ GameObject:
   - component: {fileID: 1655838914970126387}
   - component: {fileID: 1655838914970126384}
   - component: {fileID: 1655838914970126385}
-  - component: {fileID: 1655838914970126398}
+  - component: {fileID: 1655838914970126397}
   m_Layer: 5
   m_Name: Slot (6)
   m_TagString: Untagged
@@ -43027,7 +42177,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838914970126398
+--- !u!114 &1655838914970126397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43036,75 +42186,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838914970126396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915308717201}
-  itemCount: {fileID: 1655838914781199891}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838914970126399
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43192,75 +42309,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838915018604625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914385516267}
-  itemCount: {fileID: 1655838915520390381}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838915018604628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43732,84 +42816,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
---- !u!114 &1655838915105370737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655838915105370751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotNumber: 0
-  item:
-    count: 0
-    code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
-    power: 0
-    armor: 0
-    accuracy: 0
-    avoid: 0
-    critRate: 0
-    critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
-    healthPoint: 0
-    manaPoint: 0
-    toolEff: 0
-    skillEff: 0
-    expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838915373837344}
-  itemCount: {fileID: 1655838913517259283}
-  itemMenuSet: {fileID: 0}
 --- !u!114 &1655838915105370738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43924,7 +42930,7 @@ GameObject:
   - component: {fileID: 1655838915105370738}
   - component: {fileID: 1655838915105370739}
   - component: {fileID: 1655838915105370736}
-  - component: {fileID: 1655838915105370737}
+  - component: {fileID: 1655838915105370752}
   m_Layer: 5
   m_Name: Slot (22)
   m_TagString: Untagged
@@ -43932,6 +42938,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &1655838915105370752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655838915105370751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotNumber: 0
+  heroData:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
+    power: 0
+    armor: 0
+    magicPower: 0
+    magicArmor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838915115500872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44507,7 +43558,7 @@ GameObject:
   - component: {fileID: 1655838915260801547}
   - component: {fileID: 1655838915260801544}
   - component: {fileID: 1655838915260801545}
-  - component: {fileID: 1655838915260801558}
+  - component: {fileID: 1655838915260801557}
   m_Layer: 5
   m_Name: Slot (18)
   m_TagString: Untagged
@@ -44515,7 +43566,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1655838915260801558
+--- !u!114 &1655838915260801557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44524,75 +43575,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838915260801556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914426177500}
-  itemCount: {fileID: 1655838914549029125}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!224 &1655838915260801559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45031,75 +44049,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1655838915317791241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31967798f33507246a076667566fb7b5, type: 3}
+  m_Script: {fileID: 11500000, guid: f960921b3fb24d24097a04fef8bccb4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotNumber: 0
-  item:
-    count: 0
+  heroData:
+    entityName: 
     code: 0
-    itemName: 
-    type: 0
-    equipmentType: 0
-    spritePath: 
-    rating: 
-    weight: 0
-    countLimit: 0
-    price: 0
-    itemInfo: 
-    itemEffect:
-      healthPoint: 0
-      manaPoint: 0
-      isHPPercent: 0
-      isMPPercent: 0
-    sprite: {fileID: 0}
-    size: 0
-    levelLimit: 0
-    reinforce: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    items: []
     power: 0
     armor: 0
+    magicPower: 0
+    magicArmor: 0
     accuracy: 0
     avoid: 0
     critRate: 0
     critDam: 0
-    intellectPoint: 0
-    wisdomPoint: 0
-    dexterityPoint: 0
-    concentrationPoint: 0
     healthPoint: 0
+    healthPointMax: 0
     manaPoint: 0
-    toolEff: 0
-    skillEff: 0
+    manaPointMax: 0
     expEff: 0
-    powerReinforce: 0
-    armorReinforce: 0
-    accuracyReinforce: 0
-    avoidReinforce: 0
-    critRateReinforce: 0
-    critDamReinforce: 0
-    intellectPointReinforce: 0
-    wisdomPointReinforce: 0
-    dexterityPointReinforce: 0
-    concentrationPointReinforce: 0
-    healthPointReinforce: 0
-    manaPointReinforce: 0
-    expEffReinforce: 0
-    effecienty: 0
-    speed: 0
-    luck: 0
-    bonus: 0
-    ability: 0
-    effecientyReinforce: 0
-    speedReinforce: 0
-    luckReinforce: 0
-    bonusReinforce: 0
-    abilityReinforce: 0
-    handType: 0
-    spriteAnimatorPath: 
-    spriteAnimator: {fileID: 0}
-  itemIcon: {fileID: 1655838914521383864}
-  itemCount: {fileID: 1655838913860394138}
-  itemMenuSet: {fileID: 0}
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spriteIcon: {fileID: 0}
+  heroDataIcon: {fileID: 0}
+  heroDataCount: {fileID: 0}
 --- !u!114 &1655838915317791244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46749,6 +45734,7 @@ MonoBehaviour:
     skills: []
     expStack: 0
     sortingIndex: 0
+    spriteIcon: {fileID: 0}
 --- !u!114 &7845189757626583938
 MonoBehaviour:
   m_ObjectHideFlags: 0

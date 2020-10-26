@@ -26,20 +26,6 @@ public class PlayerData
     public List<Quest> currentQuest;
     public List<int> clearQuest;
 
-    public int power;
-    public int armor;
-    public int magicPower;
-    public int magicArmor;
-    public int accuracy;
-    public int avoid;
-    public float critRate;
-    public float critDam;
-
-    public float healthPoint;
-    public float healthPointMax;
-    public float manaPoint;
-    public float manaPointMax;
-
     public float expEff;
 
     public int fame;
@@ -48,7 +34,7 @@ public class PlayerData
     public int sortingIndex;
 
     public List<Skill> skills;
-    public List<EntityData> entityDatas;
+    public List<EntityData> heroDatas;
     public int heroIndex;
 
     //Equipments
