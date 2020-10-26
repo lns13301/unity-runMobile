@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class HeroSlot : MonoBehaviour, IPointerUpHandler
 {
@@ -28,10 +29,17 @@ public class HeroSlot : MonoBehaviour, IPointerUpHandler
 
     public void removeSlotUI()
     {
-        heroDataIcon.color = new Color(1, 1, 1, 0);
-        heroData = null;
-        heroDataIcon.gameObject.SetActive(false);
-        heroDataCount.gameObject.SetActive(false);
+        try
+        {
+            heroDataIcon.color = new Color(1, 1, 1, 0);
+            heroData = null;
+            heroDataIcon.gameObject.SetActive(false);
+            heroDataCount.gameObject.SetActive(false);
+        }
+        catch (Exception)
+        {
+
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)

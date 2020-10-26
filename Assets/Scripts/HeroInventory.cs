@@ -53,6 +53,7 @@ public class HeroInventory : MonoBehaviour
     {
         if (heroDatas.Count < slotCount)
         {
+            Debug.Log("영웅 추가 성공");
             heroDatas.Add(heroData);
 
             if (onChangeHeroData != null)
@@ -63,7 +64,7 @@ public class HeroInventory : MonoBehaviour
 
             return true;
         }
-
+        Debug.Log("영웅 추가 실패");
         return false;
     }
 

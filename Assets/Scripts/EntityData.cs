@@ -15,13 +15,10 @@ public class EntityData
     public int level;
     public int exp;
     public int nextExp;
-    public List<Item> items;
     //public Item[] equipments;
 
     public int power;
     public int armor;
-    public int magicPower;
-    public int magicArmor;
     public int accuracy;
     public int avoid;
     public float critRate;
@@ -42,6 +39,7 @@ public class EntityData
     public float expStack;
     public int sortingIndex;
 
+    public string spritePath;
     public Sprite spriteIcon;
 
     // Start is called before the first frame update
@@ -56,6 +54,46 @@ public class EntityData
         
     }
 
+    public EntityData(string entityName, int code, string spritePath, Element element, Rating rating,
+    int level, int exp, int nextExp, int power, int armor, int accuracy, int avoid, float critRate,
+    float critDam, float healthPoint, float healthPointMax, float manaPoint, float manaPointMax, float expEff = 0, int fame = 0, int charm = 0,
+    float expStack = 0, int sortingIndex = 0, List<Skill> skills = null, float playerX = 0, float playerY = 0)
+    {
+        this.entityName = entityName;
+        this.code = code;
+        this.spritePath = spritePath;
+        this.element = element;
+        this.rating = rating;
+        this.level = level;
+        this.exp = exp;
+        this.nextExp = exp;
+        this.power = power;
+        this.armor = armor;
+        this.accuracy = accuracy;
+        this.avoid = avoid;
+        this.critRate = critRate;
+        this.critDam = critDam;
+        this.healthPoint = healthPoint;
+        this.healthPointMax = healthPointMax;
+        this.manaPoint = manaPoint;
+        this.manaPointMax = manaPointMax;
+        this.expEff = expEff;
+        this.fame = fame;
+        this.charm = charm;
+        this.expStack = expStack;
+        this.sortingIndex = sortingIndex;
+        this.skills = skills;
+        this.playerX = playerX;
+        this.playerY = playerY;
+
+        spriteIcon = loadSprite(spritePath);
+    }
+
+    [ContextMenu("From Json Data")]
+    public Sprite loadSprite(string path)
+    {
+        return Resources.Load<Sprite>(path);
+    }
 
     public string GetElementName()
     {

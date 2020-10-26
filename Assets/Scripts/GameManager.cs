@@ -140,16 +140,16 @@ public class GameManager : MonoBehaviour
                 questSettings();*/
 
         // 나중 바꿔야 함, 우선 Raccon의 EntityData를 PlayerData 0 으로 지정
-        playerData.heroDatas.Add(PlayerAction.instance.transform.GetChild(1).GetComponent<HeroData>().entityData);
+        Invoke("AddTestHero", 1f);
         playerData.heroIndex = 0;
-        RegisterHeroDataToRange(playerData.heroDatas[playerData.heroIndex]);
+        // RegisterHeroDataToRange(playerData.heroDatas[playerData.heroIndex]);
     }
 
     void FixedUpdate()
     {
         if (isDataChanged)
         {
-            questSettings();
+            // questSettings();
             isDataChanged = false;
         }
 
@@ -169,6 +169,14 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateComboReset();
+    }
+
+    public void AddTestHero()
+    {
+        HeroInventory.instance.addHero(
+            new EntityData("너구리", 0, "Images/UI/CharacterIllust", Element.EARTH, Rating.APPRENTICE, 5, 0, 10, 50, 5, 5, 2, 3, 10, 100, 100, 50, 50));
+
+        CancelInvoke("AddTestHero");
     }
 
     private void UpdateComboReset()

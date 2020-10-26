@@ -23,6 +23,7 @@ public class HeroUI : MonoBehaviour
 
     private void slotChange(int val)
     {
+        Debug.Log("슬롯 카운트 변경");
         for (int i = 1; i < slots.Length; i++)
         {
             slots[i].slotNumber = i;
@@ -81,14 +82,15 @@ public class HeroUI : MonoBehaviour
 
     void redrawSlotUI()
     {
+        Debug.Log("다시 그림, 히어로 카운트 : " + GameManager.instance.playerData.heroDatas.Count);
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].removeSlotUI();
         }
-        for (int i = 0; i < heroInventory.heroDatas.Count; i++)
+        for (int i = 0; i < GameManager.instance.playerData.heroDatas.Count; i++)
         {
             Debug.Log("동작함");
-            slots[i].heroData = heroInventory.heroDatas[i];
+            slots[i].heroData = GameManager.instance.playerData.heroDatas[i];
             slots[i].updateSlotUI();
         }
     }

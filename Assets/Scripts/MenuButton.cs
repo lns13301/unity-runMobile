@@ -19,8 +19,6 @@ public class MenuButton : MonoBehaviour
         animator = transform.parent.GetComponent<Animator>();
         heroUIAnimator = heroUI.GetComponent<Animator>();
         isUIOn = false;
-
-        // Invoke("AddTestHero", 1f);
     }
 
     // Update is called once per frame
@@ -65,14 +63,6 @@ public class MenuButton : MonoBehaviour
         DoPause(true);
 
         CancelInvoke("OnCharacterIllust");
-    }
-
-    public void AddTestHero()
-    {
-        Debug.Log("추가");
-        HeroInventory.instance.addHero(GameManager.instance.playerData.heroDatas[0]);
-
-        CancelInvoke("AddTestHero");
     }
 
     public void DoPause(bool isPause)
