@@ -12,7 +12,7 @@ public class HeroDatabase : MonoBehaviour
 
     public List<EntityData> heroDB = new List<EntityData>();
 
-    private string spritePath = "Images/hero";
+    private string spritePath = "Images/Character/Illust";
     // private string prefabPath = "Images/hero";
 
     // Start is called before the first frame update
@@ -23,8 +23,8 @@ public class HeroDatabase : MonoBehaviour
         heroDataFile = new HeroDataFile();
         heroDataFile.heroDatas = new List<EntityData>();
 
-        //SaveheroData();
-        LoadheroData();
+        //SaveHeroData();
+        LoadHeroData();
     }
 
     // Update is called once per frame
@@ -34,16 +34,17 @@ public class HeroDatabase : MonoBehaviour
     }
 
     [ContextMenu("To Json Data")]
-    public void saveheroData()
+    public void SaveHeroData()
     {
         Debug.Log("저장 성공");
         heroDataFile.heroDatas = new List<EntityData>();
 
-        /*        heroDataFile.heroDatas.Add(new EntityData
-                    ("대지 버섯", 0, Job.NONE, Element.EARTH, 1, 3, 0, 5, 0, null, 0, 0, 0, 0, 0, 5, 5, 3, 3, 3, 2, 5, 30, 100, 100, 20, 20, spritePath + "/" + "mushroom_red_idle"));
-                heroDataFile.heroDatas.Add(new EntityData
-                    ("대지 연지비그", 1, Job.NONE, Element.EARTH, 3, 10, 0, 8, 0, null, 0, 0, 0, 0, 0, 7, 10, 5, 15, 5, 3, 3, 50, 200, 200, 100, 100,
-                    spritePath + "/" + "Flowerhero", prefabPath + "/" + "Flowerhero"));*/
+        heroDataFile.heroDatas.Add(new EntityData
+            ("[나뭇잎의 친구] 너구리", 0, spritePath + "/" + "0", Element.EARTH, Rating.APPRENTICE, 1, 0, 0, 50, 5, 15, 15, 5, 20, 200, 200, 0, 0));
+        heroDataFile.heroDatas.Add(new EntityData
+            ("[흩날리는 깃털] 비둘기", 1, spritePath + "/" + "1", Element.WIND, Rating.BEGINNER, 1, 0, 0, 55, 5, 5, 25, 10, 30, 150, 150, 0, 0));
+        heroDataFile.heroDatas.Add(new EntityData
+            ("[검은 그림자] 까마귀", 2, spritePath + "/" + "2", Element.FIRE, Rating.BEGINNER, 1, 0, 0, 45, 5, 5, 10, 0, 50, 150, 150, 0, 0));
 
         string jsonData = JsonUtility.ToJson(heroDataFile, true);
 
@@ -51,11 +52,11 @@ public class HeroDatabase : MonoBehaviour
     }
 
     [ContextMenu("From Json Data")]
-    public void LoadheroData()
+    public void LoadHeroData()
     {
         try
         {
-            Debug.Log("몬스터 정보 로드 성공");
+            Debug.Log("영웅 정보 로드 성공");
             /*string jsonData = File.ReadAllText(saveOrLoad(false, false, "heroData"));
             heroDataFile = JsonUtility.FromJson<heroDataFile>(jsonData);*/
 
@@ -80,7 +81,7 @@ public class HeroDatabase : MonoBehaviour
             string jsonData = JsonUtility.ToJson(heroDataFile, true);
 
             File.WriteAllText(SaveOrLoad(false, false, "heroData"), jsonData);
-            LoadheroData();
+            LoadHeroData();
         }
     }
 

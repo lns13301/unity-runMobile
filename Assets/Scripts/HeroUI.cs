@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HeroUI : MonoBehaviour
 {
     public HeroInventory heroInventory;
-    // public GameObject inventorySet;
+    public GameObject heroSet;
 
     public HeroSlot[] slots;
     public Transform slotHolder;
@@ -19,6 +19,8 @@ public class HeroUI : MonoBehaviour
         slots = slotHolder.GetComponentsInChildren<HeroSlot>();
         heroInventory.onHeroSlotCountChange += slotChange;
         heroInventory.onChangeHeroData += redrawSlotUI;
+
+        heroSet.SetActive(false);
     }
 
     private void slotChange(int val)
