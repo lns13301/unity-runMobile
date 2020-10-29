@@ -5865,7 +5865,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783805926}
   - component: {fileID: 783805927}
-  - component: {fileID: 783805928}
   - component: {fileID: 783805929}
   m_Layer: 5
   m_Name: HeroUI
@@ -5905,25 +5904,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783805925}
   m_CullTransparentMesh: 0
---- !u!95 &783805928
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783805925}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2def89b4f40beae4aa4020522c5cb6a1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &783805929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5969,6 +5949,8 @@ MonoBehaviour:
     spriteIcon: {fileID: 0}
   slots: []
   slotHolder: {fileID: 790573454324762874}
+  heroUIAnimator: {fileID: 790573454376762601}
+  illustAnimator: {fileID: 1122083735}
 --- !u!1 &801448873
 GameObject:
   m_ObjectHideFlags: 0
@@ -9102,8 +9084,9 @@ GameObject:
   - component: {fileID: 1122083732}
   - component: {fileID: 1122083734}
   - component: {fileID: 1122083733}
+  - component: {fileID: 1122083735}
   m_Layer: 5
-  m_Name: CharacterIllust
+  m_Name: HeroIllust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9165,6 +9148,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122083731}
   m_CullTransparentMesh: 0
+--- !u!95 &1122083735
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122083731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bd4eb6eca765e34cb92322c6a624ea4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1134836529
 GameObject:
   m_ObjectHideFlags: 0
@@ -16347,6 +16349,7 @@ MonoBehaviour:
   isUIOn: 0
   heroUI: {fileID: 783805925}
   isPause: 0
+  isHeroUIOn: 0
 --- !u!114 &2011207961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39964,6 +39967,7 @@ GameObject:
   - component: {fileID: 790573454376762607}
   - component: {fileID: 790573454376762605}
   - component: {fileID: 790573454376762606}
+  - component: {fileID: 790573454376762601}
   m_Layer: 5
   m_Name: HeroSet
   m_TagString: Untagged
@@ -39971,6 +39975,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &790573454376762601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790573454376762600}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2def89b4f40beae4aa4020522c5cb6a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!222 &790573454376762605
 CanvasRenderer:
   m_ObjectHideFlags: 0

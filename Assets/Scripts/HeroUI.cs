@@ -15,6 +15,10 @@ public class HeroUI : MonoBehaviour
     public HeroSlot[] slots;
     public Transform slotHolder;
 
+    // Animator
+    public Animator heroUIAnimator;
+    public Animator illustAnimator;
+
     // public Animator buttonMenuAnimator;
 
     void Start()
@@ -108,6 +112,6 @@ public class HeroUI : MonoBehaviour
         selectedHero = heroData;
 
         heroIllust.sprite = selectedHero.spriteIcon;
-        GetComponent<Animator>().SetTrigger("SelectNewHero");
+        illustAnimator.SetTrigger("doHeroIllustOn");
     }
 }

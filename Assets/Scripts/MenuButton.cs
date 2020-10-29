@@ -5,19 +5,18 @@ using UnityEngine;
 public class MenuButton : MonoBehaviour
 {
     private Animator animator;
-    private Animator heroUIAnimator;
     public bool isUIOn;
     private int menuButtonChildCount;
 
     public GameObject heroUI;
 
     public bool isPause = false;
+    public bool isHeroUIOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = transform.parent.GetComponent<Animator>();
-        heroUIAnimator = heroUI.GetComponent<Animator>();
         isUIOn = false;
     }
 
@@ -44,25 +43,35 @@ public class MenuButton : MonoBehaviour
     // 영웅 정보창
     public void ButtonHeroUIOnOff()
     {
-        if (heroUI.activeSelf)
+        if (heroUI.activeSelf && isHeroUIOn)
         {
-            heroUI.SetActive(false);
+            isHeroUIOn = false;
+            HeroUI.instance.illustAnimator.SetTrigger("doUIOff");
             DoPause(false);
+            Invoke("OffHeroUI", 0.3f);
         }
         else
         {
+            isHeroUIOn = true;
             heroUI.SetActive(true);
-            Invoke("OnCharacterIllust", 0.3f);
+            HeroUI.instance.heroUIAnimator.SetTrigger("doUIOn");
+            Invoke("OnHeroIllust", 0.3f);
         }
     }
 
-    public void OnCharacterIllust()
+    public void OnHeroIllust()
     {
-        heroUIAnimator.SetTrigger("doCharacterIllustOn");
-        heroUIAnimator.SetTrigger("doUIOn");
+        HeroUI.instance.illustAnimator.SetTrigger("doHeroIllustOn");
         DoPause(true);
 
         CancelInvoke("OnCharacterIllust");
+    }
+
+    public void OffHeroUI()
+    {
+        heroUI.SetActive(false);
+
+        CancelInvoke("OffHeroUI");
     }
 
     public void DoPause(bool isPause)

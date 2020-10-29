@@ -44,10 +44,7 @@ public class HeroSlot : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        HeroUI.instance.heroIllust.sprite = heroDataIcon.sprite;
-
-        // heroDataMenuOnOff();
-        // heroDataMenuSet.isPlayerInventory = true;
+        HeroUI.instance.SelectHero(heroData);
     }
 
     /*public void heroDataMenuOnOff()
