@@ -5938,6 +5938,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroInventory: {fileID: 0}
   heroSet: {fileID: 783805925}
+  heroIllust: {fileID: 0}
+  selectedHero:
+    entityName: 
+    code: 0
+    playerX: 0
+    playerY: 0
+    element: 0
+    rating: 0
+    level: 0
+    exp: 0
+    nextExp: 0
+    power: 0
+    armor: 0
+    accuracy: 0
+    avoid: 0
+    critRate: 0
+    critDam: 0
+    healthPoint: 0
+    healthPointMax: 0
+    manaPoint: 0
+    manaPointMax: 0
+    expEff: 0
+    fame: 0
+    charm: 0
+    skills: []
+    expStack: 0
+    sortingIndex: 0
+    spritePath: 
+    spriteIcon: {fileID: 0}
   slots: []
   slotHolder: {fileID: 790573454324762874}
 --- !u!1 &801448873
@@ -9112,7 +9141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class HeroUI : MonoBehaviour
 {
+    public static HeroUI instance;
+
     public HeroInventory heroInventory;
     public GameObject heroSet;
+    public Image heroIllust;
+    public EntityData selectedHero;
 
     public HeroSlot[] slots;
     public Transform slotHolder;
@@ -15,10 +19,12 @@ public class HeroUI : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         heroInventory = HeroInventory.instance;
         slots = slotHolder.GetComponentsInChildren<HeroSlot>();
         heroInventory.onHeroSlotCountChange += slotChange;
         heroInventory.onChangeHeroData += redrawSlotUI;
+        heroIllust = heroSet.transform.GetChild(1).gameObject.GetComponent<Image>();
 
         heroSet.SetActive(false);
     }
@@ -95,5 +101,13 @@ public class HeroUI : MonoBehaviour
             slots[i].heroData = GameManager.instance.playerData.heroDatas[i];
             slots[i].updateSlotUI();
         }
+    }
+
+    public void SelectHero(EntityData heroData)
+    {
+        selectedHero = heroData;
+
+        heroIllust.sprite = selectedHero.spriteIcon;
+        GetComponent<Animator>().SetTrigger("SelectNewHero");
     }
 }
