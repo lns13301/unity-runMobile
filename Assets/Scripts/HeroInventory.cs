@@ -49,7 +49,7 @@ public class HeroInventory : MonoBehaviour
         Debug.Log("슬롯크기 : " + slotCount);
     }
 
-    public bool addHero(EntityData heroData)
+    public bool AddHero(EntityData heroData)
     {
         if (heroDatas.Count < slotCount)
         {
@@ -68,7 +68,7 @@ public class HeroInventory : MonoBehaviour
         return false;
     }
 
-    public void removeItem(int slotNumber)
+    public void RemoveItem(int slotNumber)
     {
         heroDatas.RemoveAt(slotNumber);
 
@@ -79,7 +79,7 @@ public class HeroInventory : MonoBehaviour
         onChangeHeroData.Invoke();
     }
 
-    public EntityData findHeroByCodeAll(EntityData heroData)
+    public EntityData FindHeroByCodeAll(EntityData heroData)
     {
         for (int i = 0; i < heroDatas.Count; i++)
         {
@@ -92,7 +92,7 @@ public class HeroInventory : MonoBehaviour
         return null;
     }
 
-    public int getHeroIndexByCodeAll(EntityData heroData)
+    public int GetHeroIndexByCodeAll(EntityData heroData)
     {
         List<int> index = new List<int>();
 
@@ -107,7 +107,7 @@ public class HeroInventory : MonoBehaviour
         return -1;
     }
 
-    public void showHeroInventory()
+    public void ShowHeroInventory()
     {
         for (int i = 0; i < heroDatas.Count; i++)
         {

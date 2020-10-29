@@ -65,6 +65,7 @@ public class HeroDatabase : MonoBehaviour
             for (int i = 0; i < heroDataFile.heroDatas.Count; i++)
             {
                 //heroDataFile.heroDatas[i].sprite = loadSprite(heroDataFile.heroDatas[i].spritePath);
+                heroDataFile.heroDatas[i].applySprite();
                 heroDB.Add(heroDataFile.heroDatas[i]);
             }
 

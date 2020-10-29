@@ -95,6 +95,11 @@ public class EntityData
         return Resources.Load<Sprite>(path);
     }
 
+    public void applySprite()
+    {
+        spriteIcon = loadSprite(spritePath);
+    }
+
     public string GetElementName()
     {
         switch (element)

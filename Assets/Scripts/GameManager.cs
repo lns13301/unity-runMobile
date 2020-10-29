@@ -173,8 +173,9 @@ public class GameManager : MonoBehaviour
 
     public void AddTestHero()
     {
-        HeroInventory.instance.addHero(
-            new EntityData("너구리", 0, "Images/UI/CharacterIllust", Element.EARTH, Rating.APPRENTICE, 5, 0, 10, 50, 5, 5, 2, 3, 10, 100, 100, 50, 50));
+        HeroInventory.instance.AddHero(HeroDatabase.instance.heroDB[0]);
+        HeroInventory.instance.AddHero(HeroDatabase.instance.heroDB[1]);
+        HeroInventory.instance.AddHero(HeroDatabase.instance.heroDB[2]);
 
         CancelInvoke("AddTestHero");
     }
