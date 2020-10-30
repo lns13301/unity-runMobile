@@ -44,7 +44,9 @@ public class HeroDatabase : MonoBehaviour
         heroDataFile.heroDatas.Add(new EntityData
             ("[흩날리는 깃털] 비둘기", 1, spritePath + "/" + "1", Element.WIND, Rating.BEGINNER, 1, 0, 0, 55, 5, 5, 25, 10, 30, 150, 150, 0, 0));
         heroDataFile.heroDatas.Add(new EntityData
-            ("[검은 그림자] 까마귀", 2, spritePath + "/" + "2", Element.FIRE, Rating.BEGINNER, 1, 0, 0, 45, 5, 5, 10, 0, 50, 150, 150, 0, 0));
+            ("[검은 그림자] 까마귀", 2, spritePath + "/" + "2", Element.ICE, Rating.EXPERT, 1, 0, 0, 45, 5, 5, 10, 0, 50, 150, 150, 0, 0));
+        heroDataFile.heroDatas.Add(new EntityData
+            ("[타오르는 맹수] 늑대", 3, spritePath + "/" + "3", Element.FIRE, Rating.MASTER, 1, 0, 0, 70, 15, 0, 0, 0, 50, 250, 100, 0, 0));
 
         string jsonData = JsonUtility.ToJson(heroDataFile, true);
 

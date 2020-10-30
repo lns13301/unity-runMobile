@@ -12,10 +12,10 @@ public class PlayerData
     public string name;
     public Job job;
     public int level;
-    public int exp;
-    public int nextExp;
-    public int money;
-    public int gold;
+    public long exp;
+    public long nextExp;
+    public long money;
+    public long gold;
     public int inventorySize;
     //public List<QuestInformation> questInformation;
     public List<Item> items;

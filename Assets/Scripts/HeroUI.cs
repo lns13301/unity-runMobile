@@ -10,6 +10,7 @@ public class HeroUI : MonoBehaviour
     public HeroInventory heroInventory;
     public GameObject heroSet;
     public Image heroIllust;
+    public TMPro.TextMeshProUGUI heroName;
     public EntityData selectedHero;
 
     public HeroSlot[] slots;
@@ -29,6 +30,7 @@ public class HeroUI : MonoBehaviour
         heroInventory.onHeroSlotCountChange += slotChange;
         heroInventory.onChangeHeroData += redrawSlotUI;
         heroIllust = heroSet.transform.GetChild(1).gameObject.GetComponent<Image>();
+        heroName = heroSet.transform.GetChild(2).GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
 
         heroSet.SetActive(false);
     }
@@ -112,6 +114,7 @@ public class HeroUI : MonoBehaviour
         selectedHero = heroData;
 
         heroIllust.sprite = selectedHero.spriteIcon;
+        heroName.text = heroData.entityName;
         illustAnimator.SetTrigger("doHeroIllustOn");
     }
 }

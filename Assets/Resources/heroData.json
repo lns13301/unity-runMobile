@@ -28,7 +28,7 @@
             "sortingIndex": 0,
             "spritePath": "Images/Character/Illust/0",
             "spriteIcon": {
-                "instanceID": 36678
+                "instanceID": 20516
             }
         },
         {
@@ -59,16 +59,16 @@
             "sortingIndex": 0,
             "spritePath": "Images/Character/Illust/1",
             "spriteIcon": {
-                "instanceID": 36652
+                "instanceID": 19420
             }
         },
         {
             "entityName": "[검은 그림자] 까마귀",
-            "code": 2,
+            "code": 3,
             "playerX": 0.0,
             "playerY": 0.0,
-            "element": 1,
-            "rating": 2,
+            "element": 2,
+            "rating": 3,
             "level": 1,
             "exp": 0,
             "nextExp": 0,
@@ -90,7 +90,38 @@
             "sortingIndex": 0,
             "spritePath": "Images/Character/Illust/2",
             "spriteIcon": {
-                "instanceID": 36682
+                "instanceID": 19466
+            }
+        },
+        {
+            "entityName": "[타오르는 맹수] 늑대",
+            "code": 2,
+            "playerX": 0.0,
+            "playerY": 0.0,
+            "element": 1,
+            "rating": 5,
+            "level": 1,
+            "exp": 0,
+            "nextExp": 0,
+            "power": 70,
+            "armor": 15,
+            "accuracy": 0,
+            "avoid": 0,
+            "critRate": 0.0,
+            "critDam": 50.0,
+            "healthPoint": 250.0,
+            "healthPointMax": 100.0,
+            "manaPoint": 0.0,
+            "manaPointMax": 0.0,
+            "expEff": 0.0,
+            "fame": 0,
+            "charm": 0,
+            "skills": [],
+            "expStack": 0.0,
+            "sortingIndex": 0,
+            "spritePath": "Images/Character/Illust/3",
+            "spriteIcon": {
+                "instanceID": 20918
             }
         }
     ]
