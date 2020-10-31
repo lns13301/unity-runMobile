@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuButton : MonoBehaviour
 {
+    public static MenuButton instance;
     private Animator animator;
     public bool isUIOn;
     private int menuButtonChildCount;
@@ -16,6 +17,7 @@ public class MenuButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         animator = transform.parent.GetComponent<Animator>();
         isUIOn = false;
     }

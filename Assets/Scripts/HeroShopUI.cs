@@ -30,10 +30,12 @@ public class HeroShopUI : MonoBehaviour
         if (heroShopSet.activeSelf)
         {
             heroShopSet.SetActive(false);
+            MenuButton.instance.DoPause(false);
         }
         else
         {
             heroShopSet.SetActive(true);
+            MenuButton.instance.DoPause(true);
         }
     }
 
